@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>findback</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+
+
+
+	<link rel="stylesheet" type="text/css" href="./css/google-font.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+<script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+
+	
+</head>
+<body class="bg">
+      <div class="x-lang">
+        <span><a href="<%=path%>/forgotPassword?locale=en" class="x-lang-en"></a></span>
+        <span><a href="<%=path%>/forgotPassword?locale=zh" class="x-lang-zh"></a></span>
+      </div>
+
+      <div class="x-container">
+        <div class="login-title">
+          <div class="login-description">
+            <img src="./images/login/title.png" style="float:left;">
+            <p>iClick</p>
+            <P>AD EXCHANGE</P>
+            <label>Reach your customers anywhere</label>
+          </div>
+        </div>
+        <div class="login-box clearfix">
+        <div class="x-login" style="width:300px;">
+          <img src="./images/login/logo_iclick.png">
+          
+          
+              <div class="x-logo col-xs-12" style="text-align:center;font-weight:bold;line-height:normal;margin-top:20px;">
+                We have sent instructions on how to reset your password to your email address. 
+              </div>
+              <div class="x-login-warp">
+                <div class="form-group has-feedback ">
+                  <form action="<%=path%>/login" method="POST" id="form">
+                    <div class="input-group" style="">
+                      If you do not receive the instructions within a few minutes, please check your email spam and junk filters. If you should need further assistance, please contact us at: 
+                      <a target="_blank" href="mailto:technology@i-click.com" style="text-decoration:underline">technology@i-click.com</a>
+                    </div>
+                  </form>
+                </div>
+                <div class="text-center"> 
+                  <button type="button" class="btn btn-cancel" style="" onclick="$('#form').submit();">Back to login page</button>
+                </div>
+              </div>
+           
+          
+          <div class="clearfix footer" >
+             <p>Copyright &copy; ${year} iClick Interactive Asia Limited. All Rights Reserved.</p>
+             <p>iAX v<spring:message code="footer.iax.version" />. (<spring:message code="footer.suggest" /> Internet Explorer 8.0+,</p>
+             <p>&nbsp;Chrome 8.0+, Firefox 3.5+, Safari 1.0+, Opera V11+)</p>
+           </div>
+        </div>
+
+        
+        </div>
+        <div style="clear:both"></div>
+      </div>
+    </body>
+    <script type="text/javascript">
+    $(function(){
+    var locale = "${pageContext.response.locale}";
+    (locale=="zh_CN") && (locale="zh");
+    $(".x-lang-"+locale).addClass("selected");
+  })
+  
+  function doSubmit(){
+      if($('#email').val()==""){
+        $('#emailMessage').html("<br><spring:message code='user.find.back.email.empty' />");
+        return;
+      }
+      $('#form').submit();
+    }
+    
+    </script>
+</html>
