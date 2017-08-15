@@ -1,26 +1,40 @@
 
 $(function(){
-      $(".x-show-control").click(function(){
-        var menu_display="show";
-        if($("body.x-hide").length>0){
-          $("body").removeClass("x-hide");
-        }else{
-          $("body").addClass("x-hide");
-          menu_display="hide";
-        }
-        if (window.localStorage) {
-            localStorage.setItem("menu-display", menu_display);  
-        } else {
-            Cookie.write("menu-display", menu_display);  
-        }
-      })
-    
+
+	//对Date的扩展，将 Date 转化为指定格式的String   
+	//月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，   
+	//年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)   
+	//例子：   
+	//(new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423   
+	//(new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18   
+	Date.prototype.Format = function(fmt)   
+	{ //author: meizz   
+	 var o = {   
+	   "M+" : this.getMonth()+1,                 //月份   
+	   "d+" : this.getDate(),                    //日   
+	   "h+" : this.getHours(),                   //小时   
+	   "m+" : this.getMinutes(),                 //分   
+	   "s+" : this.getSeconds(),                 //秒   
+	   "q+" : Math.floor((this.getMonth()+3)/3), //季度   
+	   "S"  : this.getMilliseconds()             //毫秒   
+	 };   
+	 if(/(y+)/.test(fmt))   
+	   fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));   
+	 for(var k in o)   
+	   if(new RegExp("("+ k +")").test(fmt))   
+	 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+	 return fmt;   
+	}  
+	
+	$('[data-toggle="tooltip"]').tooltip();
       $('.x-user-con').on('click',':not(a)',function(event){
         var event = event || window.event;
 
         if($(this)[0].tagName!="I"){
 
           if($(this).parents(".x-user-main").find(".x-user-list").css("visibility")=="hidden"){
+        	  $(".x-user-main").find(".x-user-list").css("visibility","hidden");
+              $(".x-user-main").find(".x-user-list").css("opacity","0");
             $(this).parents(".x-user-main").find(".x-user-list").css("visibility","visible");
               $(this).parents(".x-user-main").find(".x-user-list").css("opacity","1");
           }else{
@@ -39,8 +53,9 @@ $(function(){
             
           }); 
       });
+      
 
-    $("[class=dropdown-menu]").on("click","li:not(.divider)",function(){
+    $(document).on("click","[class=dropdown-menu] li:not(.divider)",function(){
         $(".dropdown-toggle",$(this).parent().parent()).html($(this).children().text()+"<span class='caret arrow-down'></span>");
         $(this).parent().find(".active").removeClass("active");
         $(this).addClass("active");
@@ -55,6 +70,7 @@ $(function(){
         }
         $(this).parent().parent().find("input").first().attr("value",value);
         $(this).parent().parent().find("input").first().attr("title",($(this).children().text()));
+        $(this).parent().parent().find("input").first().change();
         $(this).parent().parent().removeClass("open");
     });
 
@@ -229,6 +245,35 @@ $(function(){
         break; 
     } 
   }); 
+  
+
+  
 });
-        
-    
+ 
+function selectable_with_all(ele_id, all_val){
+	  var option_all_selected = true;
+	  $("body").on("change",ele_id,function(){
+	    var is_all = false;
+	    $(ele_id + " option:selected").each(function(i , l){
+	      if($(l).val() == all_val) is_all = true;
+	    });
+
+	    if($(ele_id + " option:selected").length == 1){
+	      $(ele_id).trigger("liszt:updated");
+	      option_all_selected = is_all;
+	      return false;
+	    }
+
+	    if(option_all_selected && is_all){
+	      $(ele_id +" option[value=" + all_val + "]").removeAttr('selected');
+	        option_all_selected = false;
+	    }else if(!option_all_selected && is_all){
+	      $(ele_id + " option:selected").each(function(i, l) {
+	        if ($(l).val() != all_val) { $(l).removeAttr('selected'); }
+	      });
+	      option_all_selected = true;
+	    }
+	    $(ele_id).trigger("liszt:updated");
+	    $(ele_id).valid();
+	  });
+	}

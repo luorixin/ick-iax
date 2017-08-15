@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>adunit</title>
+	<link rel="shortcut icon" href="./images/favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+  <link rel="stylesheet" type="text/css" href="./css/google-font.css">
+   <link rel="stylesheet" type="text/css" href="./css/bootstrap-ssp.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
+
+  <link rel="stylesheet" type="text/css" href="./chosen/chosen.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./js/colorpickerjs/themes.css">
+
+  <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+   <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="./js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/hogan-2.0.0.min.js"></script>
+  <script type="text/javascript" src="./js/ssp.js"></script>
+  <script type="text/javascript" src="./js/ssp_template.js"></script>
+  <script type="text/javascript" src="./js/colorpickerjs/colorpicker.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="myheading">
+  <nav class="navbar navbar-inverse">
+    <div class="x-navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="/admin" class="navbar-brand" data-toggle="offcanvas"> <img src="./images/logo1.png" alt="" style="width:118px"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <!-- Single button -->
+          <div class="x-top-menu">
+            <ul class="nav navbar-nav">
+              
+              
+                <li id="admin_home"><a href="/admin/home">Home</a>
+                  <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+                    <span class="nav-arrow"></span>
+                    <li><a href="/admin/home">Dashboard</a></li>
+                    <li><a href="/admin/status">Status</a></li>
+                    <li><a href="/admin/test">Test</a></li>
+                  </ul>
+                </li>
+                <li id="admin_reports"><a href="/admin/reports">Reports</a>
+                  <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1" style="max-width:230px;">
+                    <span class="nav-arrow"></span>
+                    <li><a href="/admin/reports">Overview</a></li>
+                    <li><a href="/admin/reports/daily">By Day</a></li>
+                    <li><a href="/admin/reports/site">By Site</a></li>
+                    <li><a href="/admin/reports/app">By App</a></li>
+                    <li><a href="/admin/reports/unit">By Ad Unit</a></li>
+                    <li><a href="/admin/reports/size">By Ad Size</a></li>
+                    <li><a href="/admin/reports/dsp">By DSP</a></li>
+                    <li><a href="/admin/reports/publisher">By Publisher</a></li>
+                    <li><a href="/admin/reports/deal">By Preferred Deal</a></li>
+                    <li><a href="/admin/reports/auction">By Private Auction</a></li>
+                    <li><a href="/admin/reports/pd/order">By Programmatic Direct Deal</a>
+                      <ul class="sub-top-menu" style="top:-6px;">
+                        <li><a href="/admin/reports/pd/order">Order</a></li>
+                  	    <li><a href="/admin/reports/pd/adgroup">Ad Group</a></li>
+                        <li><a href="/admin/reports/pd/creative">Creative</a></li>
+                        <li><a href="/admin/reports/pd/advertiser">Advertiser</a></li>
+                      </ul> 
+                      <span class="caret-right"></span>
+                    </li>
+                  </ul>
+                </li>
+                <li id="admin_inventories" class="selected"><a href="/admin/inventories">Inventories</a>
+                  <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+                    <span class="nav-arrow"></span>
+                    <li><a href="/admin/inventories">Overview</a></li>
+                    <li><a href="/admin/inventories/sites">Sites</a></li>
+                    <li><a href="/admin/inventories/apps">Apps</a></li>
+                    <li><a href="/admin/inventories/units">Ad Units</a></li>
+                    <li><a href="/admin/inventories/settings">Settings</a></li>
+                  </ul>
+                </li>
+                <li id="admin_traffic"><a href="/admin/traffic/units">Traffic</a>
+                  <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+                    <span class="nav-arrow"></span>
+                    <li><a href="/admin/traffic/units">Ad Units</a></li>
+                    <li><a href="/admin/traffic/sizes">Ad Sizes</a></li>
+                    <li><a href="/admin/traffic/categories">Categories</a></li>
+                    <li><a href="/admin/traffic/sites">Sites</a></li>
+                    <li><a href="/admin/traffic/locations">Locations</a></li>
+                  </ul>
+                </li>
+                <li class="" id="admin_deals"><a href="/admin/deals">Deals</a>
+                  <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+                    <span class="nav-arrow"></span>
+                    <li><a href="/admin/deals">Overview</a></li>
+                    <li><a href="/admin/deals/pd">Programmatic Direct Deals</a></li>
+                    <li><a href="/admin/deals/preferreds">Preferred Deals</a></li>
+                    <li><a href="/admin/deals/auctions">Private Auctions</a></li>
+                  </ul>
+                </li>
+                <li class="" id="admin_creatives"><a href="/admin/creatives">Creatives</a>
+                  <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+                    <span class="nav-arrow"></span>
+                    <li><a href="/admin/creatives">Creative Management </a></li>
+                  </ul>
+                </li>
+            </ul>
+          </div>
+          <!-- Single button -->
+          <div class="x-user-main navbar-right ">
+            <div class="x-user-con">
+              <span class="x-user glyphicon glyphicon-user" style="margin-right: 10px; border-radius: 19px !important;"></span> 
+              <span class="x-user-dis">
+                
+                  Admin (<i style="color:#e83829;">ID: <strong>1</strong></i>):
+		            
+                <br>
+                <strong title="admin">admin</strong><br>
+                <br>
+              </span>
+              <span class="glyphicon glyphicon-triangle-bottom x-user-arrow"></span>
+            </div>
+            <ul class="x-user-list" style="visibility: hidden; opacity: 0;">
+              <span class="nav-arrow"></span>
+              <li>
+                <a href="/admin/accounts" class="x-user-config">
+                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  Account Info
+                </a>
+              </li>
+              <li>
+                <a href="/admin/accounts/changePassword" class="x-user-config">
+                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  Change Password
+                </a>
+              </li>
+              <li>
+                <a href="/admin/accounts/notifications/setting" class="x-user-config">
+                  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                  Notifications
+                </a>
+              </li>
+              
+                <li>
+                  <a href="/admin/accounts/resources" class="x-user-config">
+                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                    Resources
+                  </a>
+                </li>
+              
+              <li>
+                <a href="/admin/accounts/log" class="x-user-config">
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                  Change Log
+                </a>
+              </li>
+              <li>
+                <a href="/logout" class="x-user-config">
+                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                  Log Out
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- NOTIFICATIONS-->
+          <div class="x-user-main" style="float:right;margin-right:15px;">
+	          <div class="x-user-con navbar-right x-bell">
+	            <a href="javascript:;" id="notifyBell"><span class="glyphicon glyphicon-bell" style="color:#acb0bc;font-size:24px;line-height:32px;" aria-hidden="true"></span></a>
+	          </div><ul class="x-user-list" style="width: 400px;left: -150px;" id="notifys"><span class="nav-arrow" style="left:50%"></span><li><a href="/admin/accounts/notifications" style="width:360px;display:inline-block;font-weight:bold">All Notifications</a></li><hr style="margin:5px 0"><div style="height: 33px;text-align: center;"><label style="line-height: 33px;color: #acb0bc;">There are no unread notifications.</label></div></ul> 
+          </div>
+          
+          <!-- HELP-->
+          <div class="x-user-main" style="float:right;margin-right:15px;">
+            <div class="x-user-con navbar-right" style="height:38px;">
+              <a href="http://iclick.freshdesk.com/" target="_blank" id="helpQ">
+                <span class="glyphicon glyphicon-question-sign" style="font-size:24px;line-height:32px;color:#333;" aria-hidden="true"></span>
+              </a>
+            </div> 
+          </div>
+
+          <div class="navbar-form navbar-right">
+            <a href="javascript:void(0);" onclick="change_lang('en');"><span class="x-lang-en  selected"></span></a>
+            <a href="javascript:void(0);" onclick="change_lang('zh');"><span class="x-lang-zh "></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="page_title">
+	<div id="breadcrumb" class="row">
+	  <!-- Top left headings and links -->
+	  <div class="client-row"></div>
+	</div>
+
+	<div class="row">
+	  <div class="client-row">
+	    <h1>Create an Ad Unit
+	    </h1>
+	  </div>
+	</div>
+</div>
+<div class="edit-container">
+	<form class="form-horizontal" id="modifyForm" method="post">
+		<div class="control-group">
+	        <label class="control-label">Publisher</label>
+	        <div class="controls">
+	            <div class="dropdown modifylabel">
+	              <input name="publisherName" type="hidden" value="" onchange="getSites(this);">
+	              <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	                Please select an option
+	                <span class="caret arrow-down"></span>
+	              </button>
+	              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	                
+	                  <li data-value="31"><a href="javascript:;">i-click -  bShare</a></li>
+	                
+	                  <li data-value="34"><a href="javascript:;">IntoWow -  IntoWow</a></li>
+	                
+	                  <li data-value="35"><a href="javascript:;">Guoshi Partners Co., Ltd. -  One Ad</a></li>
+	                
+	                  <li data-value="36"><a href="javascript:;">虎扑体育 -  虎扑体育</a></li>
+	              </ul>
+	            </div>
+	          <div class="error-message hide">
+	            <span class="glyphicon glyphicon-alert"></span>
+	            <div class="clearfix"></div>
+	          </div>
+	        </div>
+      	</div>
+
+      	<div class="control-group">
+		  <label class="control-label">Ad Context</label>
+		  <div class="controls">
+	        <div class="dropdown modifylabel">
+	          <input name="adContext" id="adContext" type="hidden" value="1" onchange="changeContext(this);getDefaultRevenue(this);initPreload();">
+	          <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	            Site
+	            <span class="caret arrow-down"></span>
+	          </button>
+	          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	            <li data-value="1"><a href="javascript:;">Site</a></li>
+	            <li data-value="2"><a href="javascript:;">App</a></li>
+	          </ul>
+	        </div>
+		    <div class="error-message hide">
+		      <span class="glyphicon glyphicon-alert"></span>
+		      <div class="clearfix"></div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="control-group name" id="name_1">
+		  <label class="control-label">Site</label>
+		  <div class="controls">
+		    
+		      <div class="dropdown modifylabel">
+		        <input name="siteId" id="siteId" type="hidden" value="1" onchange="$(this).valid();getDefaultRevenue(this);" title="buzzads" class="valid">
+		        <button class="btn  dropdown-toggle" type="iClick" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">buzzads<span class="caret arrow-down"></span></button>
+		        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"><li data-value="1" class="active"><a href="javascript:;">buzzads</a></li></ul>
+		      </div>
+		    
+		    <div class="error-message hide">
+		      <span class="glyphicon glyphicon-alert"></span>
+		      <div class="clearfix"><label for="siteId" generated="true" class="error"></label></div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="control-group">
+		  <label class="control-label">Ad Unit Name</label>
+		  <div class="controls">
+		    <div class="clearfix modifylabel">
+		      <input type="text" name="unitName" value="">
+		    </div>
+		    <div class="clearfix infolabel hide"></div>
+		    <div class="error-message hide">
+		      <span class="glyphicon glyphicon-alert"></span>
+		      <div class="clearfix"></div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="control-group">
+		  <label class="control-label">Supported Impression Types</label>
+		  <div class="controls">
+		    <div class="modifylabel">
+		      <select class="select  " multiple id="supportedImprType" name="allowedImpTypes" disname="chosen下拉" style="width: 380px; ">
+		        <option value="Banner">Banner</option>
+		        <option value="Video">Video</option>
+		        <option value="Native">Native</option>
+		      </select>
+		  	</div>
+			  <div class="infolabel hide">
+			  </div>
+		    <div class="error-message hide">
+		      <span class="glyphicon glyphicon-alert"></span>
+		      <div class="clearfix"></div>
+		    </div>
+		  </div>
+		</div>
+		<!-- banner settings -->
+		<div id="Banner_settings" class="imprsettings" style="display:none">
+			<hr>
+			<input type="hidden" name="banner_setting_json" value="{unitSizeType:0}" />
+			<div class="control-group">
+			  <label class="control-label">Banner Settings</label>
+			  <div class="controls">
+			  	<div class="clearfix">
+			      <div class="label-input" style="padding-top: 5px; margin-top: 0px; line-height: 18px;">
+			        Supported Banner Ad Types
+			      </div>
+			    </div>
+			    <div class="modifylabel">
+			      <select class="select " multiple id="supportedBannerType" name="allowedBannerAdTypes" disname="chosen下拉" style="width: 380px; display: none;">
+			          <option value="1">XHTML Text Ad (usually mobile)</option>
+			        
+			          <option value="2">XHTML Banner Ad (usually mobile)</option>
+			        
+			          <option value="3">JavaScript Ad; must be valid XHTML (i.e., Script Tags Included)</option>
+			        
+			          <option value="4">iframe</option>
+			        
+			      </select>
+			    </div>
+			    <div class="infolabel hide">
+			    </div>
+			    <div class="error-message hide" style="top: 30px;">
+			      <span class="glyphicon glyphicon-alert"></span>
+			      <div class="clearfix"><label for="supportedBannerType" generated="true" class="error"></label></div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="control-group " style="padding-top: 0" id="api_frameworks">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Support Banner API Frameworks
+				      </div>
+				    </div>
+				    <div class="modifylabel">
+				      <select class="select" multiple id="apiFrameworks" name="apiFrameworks" disname="chosen下拉" style="width: 380px;">
+				        
+				          <option value="1">VPAID 1.0</option>
+				        
+				          <option value="2">VPAID 2.0</option>
+				        
+				          <option value="3">MRAID-1</option>
+				        
+				          <option value="4">ORMMA</option>
+				        
+				          <option value="5">MRAID-2</option>
+
+				          <option value="6">MRAID-3</option>
+				        
+				      </select>
+				    </div>
+				    <div class="infolabel hide"></div>
+				    <div class="error-message hide" style="top: 30px;">
+				      <span class="glyphicon glyphicon-alert"></span>
+				      <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0" id="mimes_Banner">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Supported Context Mimes
+				      </div>
+				    </div>
+				    <div class="modifylabel">
+				      <select class="select " multiple id="supportedContextMimes" name="allowedContentMime" disname="chosen下拉" style="width: 380px;">
+	        
+				          <option value="1">flash</option>
+				        
+				          <option value="2">png</option>
+				        
+				          <option value="3">jpg</option>
+				        
+				          <option value="4">gif</option>
+				        
+				      </select>
+				    </div>
+				    <div class="infolabel hide"></div>
+				    <div class="error-message hide" style="top: 30px;">
+				      <span class="glyphicon glyphicon-alert"></span>
+				      <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+
+			<div class="control-group" style="padding-top: 0" id="size_Banner">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Ad Unit Size
+				      </div>
+				    </div>
+				    <div class="clearfix">
+			            <label class="form-radio radio-inline">
+			            	<input type="radio" value="0" name="unitSizeType" data-target="extra_Banner" checked>
+			            Extra Banner Size</label>
+			            <label class="form-radio radio-inline">
+			            	<input type="radio" value="1" name="unitSizeType" data-target="formats_Banner">
+			            Banner Size Formats</label>
+			        </div>
+				    <div class="infolabel hide"></div>
+				    <div class="error-message hide" style="top: 30px;">
+				      <span class="glyphicon glyphicon-alert"></span>
+				      <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+
+			<div class="control-group unitSizeType" style="padding-top: 0" id="extra_Banner">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Extra Banner Size
+				      </div>
+				    </div>
+				    <div class="input-append">
+				        <input type="text" value="" style="width: 100px;" class="align_right numeric valid modifylabel" name="width">
+				        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+				        <span class="add-on"> W (dip) </span> <span style="margin: 0 10px; float: left; line-height: 30px;">X</span> <input type="text" style="width: 100px;" value="" class="align_right numeric valid modifylabel" name="height">
+				        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+				        <span class="add-on"> H (dip) </span>
+				      </div>
+				      <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+				        <span class="glyphicon glyphicon-alert"></span>
+				        <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+
+			<div class="control-group unitSizeType" style="padding-top: 0;display:none;" id="formats_Banner">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Banner Size Formats
+				      </div>
+				    </div>
+				    
+				    <div class="formats-banner-con">
+				    	<!-- for clone -->
+					    <div class="formats-banner" style="display:none">
+					    	<label class="formats-banner-index"></label>
+					    	<div class="formats-banner-chosen">
+					    		<div class="dropdown modifylabel">
+							        <input name="formats-banner-type" onchange="" type="hidden" value="1" title="DIPS" class="valid">
+							        <button class="btn  dropdown-toggle" type="iClick" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">DIPS
+							        	<span class="caret arrow-down"></span>
+							        </button>
+							        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							        	<li data-value="1" class="active"><a href="javascript:;">DIPS</a></li>
+							        	<li data-value="2" class=""><a href="javascript:;">Ratio</a></li>
+							        </ul>
+							    </div>
+					    	</div>
+						    <div class="input-append">
+						        <input type="text" value="" style="width: 100px;" class="align_right numeric valid modifylabel" name="width_formats">
+						        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+						        <span class="add-on"> Width </span> 
+						        <span name="opt" style="margin: 0 10px; float: left; line-height: 30px;">X</span>
+						         <input type="text" style="width: 100px;" value="" class="align_right numeric valid modifylabel" name="height_formats">
+						        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;">
+						        </div>
+						        <span class="add-on"> Height </span>
+						    </div>
+						    <div class="formats-banner-minus">
+								<button class="btn dropdown-toggle delbanner" type="button">
+			                      	<i class="glyphicon glyphicon-minus"></i>
+			                    </button>
+						    </div>
+						    <div class="error-message hide" style="height: auto; min-height: 28px;left:550px;">
+						        <span class="glyphicon glyphicon-alert"></span>
+						        <div class="clearfix"></div>
+						    </div>
+						</div>
+					    <div class="formats-banner">
+					    	<input type="hidden" name="formats_banner_json" value="{index:1,formatsType:1}" />
+					    	<label class="formats-banner-index">#1</label>
+					    	<div class="formats-banner-chosen">
+					    		<div class="dropdown modifylabel">
+							        <input name="formats-banner-type" type="hidden" value="1" title="DIPS" class="valid">
+							        <button class="btn  dropdown-toggle" type="iClick" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">DIPS
+							        	<span class="caret arrow-down"></span>
+							        </button>
+							        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							        	<li data-value="1" class="active"><a href="javascript:;">DIPS</a></li>
+							        	<li data-value="2" class=""><a href="javascript:;">Ratio</a></li>
+							        </ul>
+							    </div>
+					    	</div>
+						    <div class="input-append">
+						        <input type="text" value="" style="width: 100px;" class="align_right numeric valid modifylabel" name="width_formats">
+						        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+						        <span class="add-on"> Width </span> 
+						        <span name="opt" style="margin: 0 10px; float: left; line-height: 30px;">X</span>
+						         <input type="text" style="width: 100px;" value="" class="align_right numeric valid modifylabel" name="height_formats">
+						        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;">
+						        </div>
+						        <span class="add-on"> Height </span>
+						    </div>
+						    <div class="error-message hide" style="height: auto; min-height: 28px;left:550px;">
+						        <span class="glyphicon glyphicon-alert"></span>
+						        <div class="clearfix"></div>
+						    </div>
+						</div>
+						<div class="formats-banner-plus">
+							<i class="glyphicon glyphicon-plus"></i>
+							<button class="btn dropdown-toggle clonebanner" type="button">
+		                      Format
+		                    </button>
+						</div>
+					</div>
+			  	</div>
+			</div>
+		</div>
+		<!-- video settings-->
+		<div id="Video_settings" class="imprsettings" style="display:none">
+			<hr/>
+			<div class="control-group">
+			  <label class="control-label">Video Settings</label>
+			  <div class="controls">
+			  	<div class="clearfix">
+			      <div class="label-input" style="padding-top: 5px; margin-top: 0px; line-height: 18px;">
+			        Supported Video Protocols
+			      </div>
+			    </div>
+			    <div class="modifylabel">
+			      <select class="select " multiple id="supportedVideoProtocols" name="videoProtocolId" disname="chosen下拉" style="width: 380px; ">
+	        
+			          <option value="1">VAST 1.0</option>
+			          <option value="2">VAST 2.0</option>
+			          <option value="3">VAST 3.0</option>
+			          <option value="7">VAST 4.0</option>
+			          <option value="4">VAST 1.0 Wrapper</option>
+			          <option value="5">VAST 2.0 Wrapper</option>
+			          <option value="6">VAST 3.0 Wrapper</option>
+			          <option value="8">VAST 4.0 Wrapper</option>
+			        
+			      </select>
+			    </div>
+			    <div class="infolabel hide">
+			    </div>
+			    <div class="error-message hide" style="top: 30px;">
+			      <span class="glyphicon glyphicon-alert"></span>
+			      <div class="clearfix"><label for="supportedBannerType" generated="true" class="error"></label></div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="control-group " style="padding-top: 0" id="api_frameworks">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Support Video API Frameworks
+				      </div>
+				    </div>
+				    <div class="modifylabel">
+				      <select class="select" multiple id="apiFrameworksVideo" name="apiFrameworksVideo" disname="chosen下拉" style="width: 380px;">
+				        
+				          <option value="1">VPAID 1.0</option>
+				        
+				          <option value="2">VPAID 2.0</option>
+				        
+				          <option value="3">MRAID-1</option>
+				        
+				          <option value="4">ORMMA</option>
+				        
+				          <option value="5">MRAID-2</option>
+
+				          <option value="6">MRAID-3</option>
+				        
+				      </select>
+				    </div>
+				    <div class="infolabel hide"></div>
+				    <div class="error-message hide" style="top: 30px;">
+				      <span class="glyphicon glyphicon-alert"></span>
+				      <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0" id="mimes_Banner">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Supported Context Mimes
+				      </div>
+				    </div>
+				    <div class="modifylabel">
+				      <select class="select" multiple id="supportedContextMimesVideo" name="allowedContentMimeVideo" disname="chosen下拉" style="width: 380px; ">
+				          <option value="5">flash</option>
+				          <option value="6">mp4</option>
+				          <option value="7">mov</option>
+				          <option value="8">m4v</option>
+				          <option value="9">3gp</option>
+				          <option value="10">html</option>
+				          <option value="11">jpg</option>
+				          <option value="12">gif</option>
+				          <option value="13">png</option>
+				      </select>
+				    </div>
+				    <div class="infolabel hide"></div>
+				    <div class="error-message hide" style="top: 30px;">
+				      <span class="glyphicon glyphicon-alert"></span>
+				      <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0" id="size_Video">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Ad Unit Size - Video Player Size
+				      </div>
+				    </div>
+				    <div class="input-append">
+				        <input type="text" value="" style="width: 100px;" class="align_right numeric valid modifylabel" name="width_video">
+				        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+				        <span class="add-on"> W (dip) </span> <span style="margin: 0 10px; float: left; line-height: 30px;">X</span> <input type="text" style="width: 100px;" value="" class="align_right numeric valid modifylabel" name="height_video">
+				        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+				        <span class="add-on"> H (dip) </span>
+				      </div>
+				      <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+				        <span class="glyphicon glyphicon-alert"></span>
+				        <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Video Ad Duration 
+				        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please enter the minimum and maximum ad duration that can be served for this ad unit."></span>
+				      </div>
+				    </div>
+				    <div class="input-append">
+				        <input type="text" value="" style="width: 85px;" class="align_right numeric modifylabel error" name="durationMin">
+				        <div class="clearfix infolabel hide align_right" style="width: 85px; float: left;"></div>
+				        <span class="add-on"> Min (sec) </span> <span style="margin: 0 10px; float: left; line-height: 30px;"> - </span> <input type="text" style="width: 85px;" value="" class="align_right numeric modifylabel error" name="durationMax">
+				        <div class="clearfix infolabel hide align_right" style="width: 85px; float: left;"></div>
+				        <span class="add-on"> Max (sec) </span>
+				    </div>
+				    <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+				        <span class="glyphicon glyphicon-alert"></span>
+				        <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Video Ad Start Delay 
+				        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the video ad start delay. For in-banner video ads, please choose 'Pre-Roll'."></span>
+				      </div>
+				    </div>
+				    <div class="dropdown modifylabel">
+				        <input name="startDelay" id="startDelay" type="hidden" value="" onchange="$(this).valid();videoStartDelayChange(this)" class="error">
+				        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				          Please select an option
+				          <span class="caret arrow-down"></span>
+				        </button>
+				        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				          <li data-value="1"><a href="javascript:;">Mid-Roll</a></li>
+				          <li data-value="0"><a href="javascript:;">Pre-Roll</a></li>
+				          <li data-value="-1"><a href="javascript:;">Generic Mid-Roll</a></li>
+				          <li data-value="-2"><a href="javascript:;">Generic Post-Roll</a></li>
+
+				        </ul>
+				    </div>
+				    <div class="clearfix infolabel hide"></div>
+				    <div class="error-message hide"  style="top: 30px;">
+				        <span class="glyphicon glyphicon-alert"></span>
+				        <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0">
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Video Placement
+				      </div>
+				    </div>
+				    <div class="dropdown modifylabel">
+				        <input name="startPlacement" id="startPlacement" type="hidden" value="" onchange="$(this).valid();" >
+				        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				          Please select an option
+				          <span class="caret arrow-down"></span>
+				        </button>
+				        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				          <li data-value="1"><a href="javascript:;">In-Stream</a></li>
+				          <li data-value="0"><a href="javascript:;">In-Banner</a></li>
+				          <li data-value="-1"><a href="javascript:;">In Article</a></li>
+				          <li data-value="-2"><a href="javascript:;">In Feed</a></li>
+				          <li data-value="-3"><a href="javascript:;">Intersitial / Slider / Floating</a></li>
+
+				        </ul>
+				    </div>
+				    <div class="clearfix infolabel hide"></div>
+				    <div class="error-message hide"  style="top: 30px;">
+				        <span class="glyphicon glyphicon-alert"></span>
+				        <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+		</div>
+		<!-- native settings -->
+		<div id="Native_settings" class="imprsettings" style="display:none">
+			<hr/>
+			<input type="hidden" name="native_setting_json" value="{apiFrameworksNative:[]}" />
+			<div class="control-group">
+			  <label class="control-label">Native Settings</label>
+			  	<div class="controls">
+				    <div class="clearfix">
+				      <div class="label-input">
+				        Support Native API Frameworks
+				      </div>
+				    </div>
+				    <div class="modifylabel">
+				      <select class="select" multiple id="apiFrameworksNative" name="apiFrameworksNative" disname="chosen下拉" style="width: 380px;">
+				        
+				          <option value="1">VPAID 1.0</option>
+				          <option value="2">VPAID 2.0</option>
+				          <option value="3">MRAID-1</option>
+				          <option value="4">ORMMA</option>
+				          <option value="5">MRAID-2</option>
+				          <option value="6">MRAID-3</option>
+				        
+				      </select>
+				    </div>
+				    <div class="infolabel hide"></div>
+				    <div class="error-message hide" style="top: 30px;">
+				      <span class="glyphicon glyphicon-alert"></span>
+				      <div class="clearfix"></div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="control-group" style="padding-top: 0">
+			  	<div class="controls">
+			  		<div class="native-assets-con">
+			  			<!-- for clone -->
+					    <div class="native-assets" style="display:none">
+						    <div class="control-group">
+						    	<label class="control-label" style="font-weight:bold">
+						    		<b></b>
+						    		<div class="native-assets-minus">
+										<button class="btn dropdown-toggle delassets" type="button">
+					                      	<i class="glyphicon glyphicon-minus"></i>
+					                    </button>
+								    </div>
+						    	</label>
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Asset Type
+								      </div>
+								    </div>
+								    <div class="dropdown modifylabel">
+								        <input name="assetType" id="assetType" type="hidden" value="0" title="" >
+								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								          Title
+								          <span class="caret arrow-down"></span>
+								        </button>
+								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								          <li data-value="0"><a href="javascript:;">Title</a></li>
+								          <li data-value="1"><a href="javascript:;">Image</a></li>
+								          <li data-value="2"><a href="javascript:;">Video</a></li>
+								          <li data-value="3"><a href="javascript:;">Data</a></li>
+								        </ul>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Title" style="padding-top:0">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Max. Length of Text
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Recommended to be 25,90,140."></span>
+								      </div>
+								    </div>
+								    <div class="clearfix modifylabel">
+								      <input type="text" name="maxLengthText_title" value="">
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Image" style="padding-top:0;display:none;">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Image Type
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the video ad start delay. For in-banner video ads, please choose 'Pre-Roll'."></span>
+								      </div>
+								    </div>
+								    <div class="dropdown modifylabel">
+								        <input name="imageType" type="hidden" value="" class="error">
+								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								          Please select an option
+								          <span class="caret arrow-down"></span>
+								        </button>
+								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								          <li data-value="0"><a href="javascript:;">Icon</a></li>
+								          <li data-value="1"><a href="javascript:;">Logo</a></li>
+								          <li data-value="2"><a href="javascript:;">Main</a></li>
+								        </ul>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Image" style="padding-top: 0;display:none;">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Image Size
+								      </div>
+								    </div>
+								    <div class="input-append">
+								        <input type="text" value="" style="width: 100px;" class="align_right numeric valid modifylabel" name="imageWidth">
+								        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+								        <span class="add-on"> W (dip) </span> <span style="margin: 0 10px; float: left; line-height: 30px;">X</span> <input type="text" style="width: 100px;" value="" class="align_right numeric valid modifylabel" name="imageHeight">
+								        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+								        <span class="add-on"> H (dip) </span>
+								      </div>
+								      <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+								        <span class="glyphicon glyphicon-alert"></span>
+								        <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Image" style="padding-top: 0;display:none">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Supported Context Mimes
+								      </div>
+								    </div>
+								    <div class="modifylabel">
+								      <select class="select " multiple name="allowedContentMime_native" disname="chosen下拉" style="width: 380px;">
+					        
+								          <option value="1">flash</option>
+								        
+								          <option value="2">png</option>
+								        
+								          <option value="3">jpg</option>
+								        
+								          <option value="4">gif</option>
+								        
+								      </select>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Video" style="padding-top: 0;display:none">
+							  <div class="controls">
+							  	<div class="clearfix">
+							      <div class="label-input" style="padding-top: 5px; margin-top: 0px; line-height: 18px;">
+							        Supported Video Protocols
+							      </div>
+							    </div>
+							    <div class="modifylabel">
+							      <select class="select " multiple name="videoProtocolId_native" disname="chosen下拉" style="width: 380px; ">
+					        
+							          <option value="1">VAST 1.0</option>
+							          <option value="2">VAST 2.0</option>
+							          <option value="3">VAST 3.0</option>
+							          <option value="7">VAST 4.0</option>
+							          <option value="4">VAST 1.0 Wrapper</option>
+							          <option value="5">VAST 2.0 Wrapper</option>
+							          <option value="6">VAST 3.0 Wrapper</option>
+							          <option value="8">VAST 4.0 Wrapper</option>
+							        
+							      </select>
+							    </div>
+							    <div class="infolabel hide">
+							    </div>
+							    <div class="error-message hide" style="top: 30px;">
+							      <span class="glyphicon glyphicon-alert"></span>
+							      <div class="clearfix"><label for="supportedBannerType" generated="true" class="error"></label></div>
+							    </div>
+							  </div>
+							</div>
+							<div class="control-group type_asset type_Video" style="padding-top: 0;display:none">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Supported Context Mimes
+								      </div>
+								    </div>
+								    <div class="modifylabel">
+								      <select class="select" multiple name="allowedContentMimeVideo_native" disname="chosen下拉" style="width: 380px; ">
+								          <option value="5">flash</option>
+								          <option value="6">mp4</option>
+								          <option value="7">mov</option>
+								          <option value="8">m4v</option>
+								          <option value="9">3gp</option>
+								          <option value="10">html</option>
+								          <option value="11">jpg</option>
+								          <option value="12">gif</option>
+								          <option value="13">png</option>
+								      </select>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Video" style="padding-top: 0;display:none">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Video Ad Duration 
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please enter the minimum and maximum ad duration that can be served for this ad unit."></span>
+								      </div>
+								    </div>
+								    <div class="input-append">
+								        <input type="text" value="" style="width: 85px;" class="align_right numeric modifylabel error" name="durationMin_native">
+								        <div class="clearfix infolabel hide align_right" style="width: 85px; float: left;"></div>
+								        <span class="add-on"> Min (sec) </span> <span style="margin: 0 10px; float: left; line-height: 30px;"> - </span> <input type="text" style="width: 85px;" value="" class="align_right numeric modifylabel error" name="durationMax_native">
+								        <div class="clearfix infolabel hide align_right" style="width: 85px; float: left;"></div>
+								        <span class="add-on"> Max (sec) </span>
+								    </div>
+								    <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+								        <span class="glyphicon glyphicon-alert"></span>
+								        <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Data" style="display:none;">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Data Type
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the video ad start delay. For in-banner video ads, please choose 'Pre-Roll'."></span>
+								      </div>
+								    </div>
+								    <div class="dropdown modifylabel">
+								        <input name="DataType" type="hidden" value="" class="error">
+								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								          Please select an option
+								          <span class="caret arrow-down"></span>
+								        </button>
+								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								          <li data-value="0"><a href="javascript:;">Sponsored</a></li>
+								          <li data-value="1"><a href="javascript:;">Description</a></li>
+								          <li data-value="2"><a href="javascript:;">Rating</a></li>
+								          <li data-value="3"><a href="javascript:;">Likes</a></li>
+								          <li data-value="4"><a href="javascript:;">Downloads</a></li>
+								          <li data-value="5"><a href="javascript:;">Price</a></li>
+								          <li data-value="6"><a href="javascript:;">Sale Price</a></li>
+								          <li data-value="7"><a href="javascript:;">Phone</a></li>
+								          <li data-value="8"><a href="javascript:;">Address</a></li>
+								          <li data-value="9"><a href="javascript:;">Additional Description</a></li>
+								          <li data-value="10"><a href="javascript:;">Display URL</a></li>
+								          <li data-value="11"><a href="javascript:;">Call To Action</a></li>
+								        </ul>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Data" style="display:none">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Max. Length of Text
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Recommended to be 25,90,140."></span>
+								      </div>
+								    </div>
+								    <div class="clearfix modifylabel">
+								      <input type="text" name="maxLengthText_native" value="">
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group" style="padding-top: 0" id="">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Require
+								      </div>
+								    </div>
+								    <div class="clearfix">
+							            <label class="form-radio radio-inline"><input type="radio" value="0" name="assetRequire_clone" class="assetRequire" checked>
+							            No</label>
+							            <label class="form-radio radio-inline"><input type="radio" value="1" name="assetRequire_clone" class="assetRequire" >
+							            Yes</label>
+							        </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+						</div>
+						<div class="native-assets">
+							<input type="hidden" name="native_asset_json" value="{index:1,require:0,assetType:0}" />
+						    <div class="control-group">
+						    	<label class="control-label" style="font-weight:bold">
+						    		Native Assets 1
+						    	</label>
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Asset Type
+								      </div>
+								    </div>
+								    <div class="dropdown modifylabel">
+								        <input name="assetType" value="0" id="assetType" type="hidden" title="" >
+								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								          Title
+								          <span class="caret arrow-down"></span>
+								        </button>
+								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								          <li data-value="0"><a href="javascript:;">Title</a></li>
+								          <li data-value="1"><a href="javascript:;">Image</a></li>
+								          <li data-value="2"><a href="javascript:;">Video</a></li>
+								          <li data-value="3"><a href="javascript:;">Data</a></li>
+								        </ul>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Title" style="padding-top:0;">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Max. Length of Text
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Recommended to be 25,90,140."></span>
+								      </div>
+								    </div>
+								    <div class="clearfix modifylabel">
+								      <input type="text" name="maxLengthText_title" value="">
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Image" style="padding-top:0;display:none;">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Image Type
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the video ad start delay. For in-banner video ads, please choose 'Pre-Roll'."></span>
+								      </div>
+								    </div>
+								    <div class="dropdown modifylabel">
+								        <input name="imageType" type="hidden" value="" class="">
+								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								          Please select an option
+								          <span class="caret arrow-down"></span>
+								        </button>
+								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								          <li data-value="0"><a href="javascript:;">Icon</a></li>
+								          <li data-value="1"><a href="javascript:;">Logo</a></li>
+								          <li data-value="2"><a href="javascript:;">Main</a></li>
+								        </ul>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Image" style="padding-top: 0;display:none;">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Image Size
+								      </div>
+								    </div>
+								    <div class="input-append">
+								        <input type="text" value="" style="width: 100px;" class="align_right numeric valid modifylabel" name="imageWidth">
+								        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+								        <span class="add-on"> W (dip) </span> <span style="margin: 0 10px; float: left; line-height: 30px;">X</span> <input type="text" style="width: 100px;" value="" class="align_right numeric valid modifylabel" name="imageHeight">
+								        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
+								        <span class="add-on"> H (dip) </span>
+								      </div>
+								      <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+								        <span class="glyphicon glyphicon-alert"></span>
+								        <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Image" style="padding-top: 0;display:none">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Supported Context Mimes
+								      </div>
+								    </div>
+								    <div class="modifylabel">
+								      <select class="select " multiple name="allowedContentMime_native" disname="chosen下拉" style="width: 380px;">
+					        
+								          <option value="1">flash</option>
+								        
+								          <option value="2">png</option>
+								        
+								          <option value="3">jpg</option>
+								        
+								          <option value="4">gif</option>
+								        
+								      </select>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Video" style="padding-top: 0;display:none">
+							  <div class="controls">
+							  	<div class="clearfix">
+							      <div class="label-input" style="padding-top: 5px; margin-top: 0px; line-height: 18px;">
+							        Supported Video Protocols
+							      </div>
+							    </div>
+							    <div class="modifylabel">
+							      <select class="select " multiple name="videoProtocolId_native" disname="chosen下拉" style="width: 380px; ">
+					        
+							          <option value="1">VAST 1.0</option>
+							          <option value="2">VAST 2.0</option>
+							          <option value="3">VAST 3.0</option>
+							          <option value="7">VAST 4.0</option>
+							          <option value="4">VAST 1.0 Wrapper</option>
+							          <option value="5">VAST 2.0 Wrapper</option>
+							          <option value="6">VAST 3.0 Wrapper</option>
+							          <option value="8">VAST 4.0 Wrapper</option>
+							        
+							      </select>
+							    </div>
+							    <div class="infolabel hide">
+							    </div>
+							    <div class="error-message hide" style="top:30px;">
+							      <span class="glyphicon glyphicon-alert"></span>
+							      <div class="clearfix"><label for="supportedBannerType" generated="true" class="error"></label></div>
+							    </div>
+							  </div>
+							</div>
+							<div class="control-group type_asset type_Video" style="padding-top: 0;display:none">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Supported Context Mimes
+								      </div>
+								    </div>
+								    <div class="modifylabel">
+								      <select class="select" multiple name="allowedContentMimeVideo_native" disname="chosen下拉" style="width: 380px; ">
+								          <option value="5">flash</option>
+								          <option value="6">mp4</option>
+								          <option value="7">mov</option>
+								          <option value="8">m4v</option>
+								          <option value="9">3gp</option>
+								          <option value="10">html</option>
+								          <option value="11">jpg</option>
+								          <option value="12">gif</option>
+								          <option value="13">png</option>
+								      </select>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Video" style="padding-top: 0;display:none">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Video Ad Duration 
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please enter the minimum and maximum ad duration that can be served for this ad unit."></span>
+								      </div>
+								    </div>
+								    <div class="input-append">
+								        <input type="text" value="" style="width: 85px;" class="align_right numeric modifylabel error" name="durationMin_native">
+								        <div class="clearfix infolabel hide align_right" style="width: 85px; float: left;"></div>
+								        <span class="add-on"> Min (sec) </span> <span style="margin: 0 10px; float: left; line-height: 30px;"> - </span> <input type="text" style="width: 85px;" value="" class="align_right numeric modifylabel error" name="durationMax_native">
+								        <div class="clearfix infolabel hide align_right" style="width: 85px; float: left;"></div>
+								        <span class="add-on"> Max (sec) </span>
+								    </div>
+								    <div class="error-message hide" style="height: auto; min-height: 28px;top:30px;">
+								        <span class="glyphicon glyphicon-alert"></span>
+								        <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="control-group type_asset type_Data" style="display:none;">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Data Type
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the video ad start delay. For in-banner video ads, please choose 'Pre-Roll'."></span>
+								      </div>
+								    </div>
+								    <div class="dropdown modifylabel">
+								        <input name="DataType" type="hidden" class="error">
+								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								          Please select an option
+								          <span class="caret arrow-down"></span>
+								        </button>
+								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								          <li data-value="0"><a href="javascript:;">Sponsored</a></li>
+								          <li data-value="1"><a href="javascript:;">Description</a></li>
+								          <li data-value="2"><a href="javascript:;">Rating</a></li>
+								          <li data-value="3"><a href="javascript:;">Likes</a></li>
+								          <li data-value="4"><a href="javascript:;">Downloads</a></li>
+								          <li data-value="5"><a href="javascript:;">Price</a></li>
+								          <li data-value="6"><a href="javascript:;">Sale Price</a></li>
+								          <li data-value="7"><a href="javascript:;">Phone</a></li>
+								          <li data-value="8"><a href="javascript:;">Address</a></li>
+								          <li data-value="9"><a href="javascript:;">Additional Description</a></li>
+								          <li data-value="10"><a href="javascript:;">Display URL</a></li>
+								          <li data-value="11"><a href="javascript:;">Call To Action</a></li>
+								        </ul>
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group type_asset type_Data" style="display:none">
+						    	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Max. Length of Text
+								        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Recommended to be 25,90,140."></span>
+								      </div>
+								    </div>
+								    <div class="clearfix modifylabel">
+								      <input type="text" name="maxLengthText_native" value="">
+								    </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+						    </div>
+						    <div class="control-group" style="padding-top: 0" id="">
+							  	<div class="controls">
+								    <div class="clearfix">
+								      <div class="label-input">
+								        Require
+								      </div>
+								    </div>
+								    <div class="clearfix">
+							            <label class="form-radio radio-inline"><input type="radio" value="0" name="assetRequire" class="assetRequire" checked>
+							            No</label>
+							            <label class="form-radio radio-inline"><input type="radio" value="1" name="assetRequire" class="assetRequire" >
+							            Yes</label>
+							        </div>
+								    <div class="infolabel hide"></div>
+								    <div class="error-message hide" style="top: 30px;">
+								      <span class="glyphicon glyphicon-alert"></span>
+								      <div class="clearfix"></div>
+								    </div>
+							  	</div>
+							</div>
+						</div>
+						<div class="formats-banner-plus">
+							<i class="glyphicon glyphicon-plus"></i>
+							<button class="btn dropdown-toggle cloneassets" type="button">
+		                      Native Asset
+		                    </button>
+						</div>
+					</div>
+			  	</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="control-group">
+		    <label class="control-label">Ad Unit Position <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the ad unit position. If this is an interstitial or fullscreen ad unit, please select 'Full Screen'."></span></label>
+		    <div class="controls">
+		      <div class="dropdown modifylabel">
+		        <input name="positionId" type="hidden" value="" onchange="$(this).valid()">
+		        <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		          Please select an option
+		          <span class="caret arrow-down"></span>
+		        </button>
+		        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		           <li data-value="1"><a href="javascript:;">Unknown</a></li>
+		            <li data-value="2"><a href="javascript:;">Above the Fold</a></li>
+		              <li data-value="3"><a href="javascript:;" data-toggle="tooltip" data-placement="right" data-original-title="DEPRECATED - May or may not be initially visible depending on screen size/resolution">DEPRECATED - May or may not be initially...</a></li>
+		            <li data-value="4"><a href="javascript:;">Below the Fold</a></li>
+		            <li data-value="5"><a href="javascript:;">Header</a></li>
+		            <li data-value="6"><a href="javascript:;">Footer</a></li>
+		            <li data-value="7"><a href="javascript:;">Sidebar</a></li>
+		            <li data-value="8"><a href="javascript:;">Full Screen</a></li>
+		            <li data-value="9"><a href="javascript:;">Floating Left</a></li>
+		            <li data-value="10"><a href="javascript:;">Floating Right</a></li>
+		            <li data-value="11"><a href="javascript:;">Floating Top</a></li>
+		            <li data-value="12"><a href="javascript:;">Floating Bottom</a></li>
+		            <li data-value="13"><a href="javascript:;">Floating Top Left</a></li>
+		            <li data-value="14"><a href="javascript:;">Floating Top Right</a></li>
+		            <li data-value="15"><a href="javascript:;">Floating Bottom Left</a></li>
+		            <li data-value="16"><a href="javascript:;">Floating Bottom Right</a></li>
+		        </ul>
+		      </div>
+		      <div class="clearfix infolabel hide"></div>
+
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		</div>
+		<div class="control-group">
+		    <label class="control-label">Price Floor</label>
+		    <div class="controls">
+		      <div class="input-append selection-unit">
+		        <input type="text" id="budget_dis_input" value="" style="width: 289px;" class="align_right numeric valid modifylabel" name="decimalPrice">
+		        <div class="dropdown">
+		          <input name="rateId" type="hidden" value="1" title="CNY">
+		          <button class="btn modifylabel dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">CNY<span class="caret arrow-down"></span></button>
+		          
+		            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		              <!-- <li value="1" class="active"><a href="javascript:;">CNY</a></li> -->
+		              
+		                <li data-value="1" class="active"><a href="javascript:;">CNY</a></li>
+		              
+		                <li data-value="2"><a href="javascript:;">USD</a></li>
+		              
+		                <li data-value="3"><a href="javascript:;">JPY</a></li>
+		              
+		            </ul>
+		          
+		        </div>
+		        <div class="clearfix infolabel hide" style="width: 289px; float: left; text-align: right"></div>
+		        <span class="add-on infolabel hide" style="width: 50px;">  </span>
+		      </div>
+
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		</div>
+		<div class="control-group">
+		    <label class="control-label">Backfill Type <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose a backfill type for unsold inventories. If you choose 'System Default', the backfill type will default to the system settings."></span> </label>
+		    <div class="controls">
+		      <div class="dropdown modifylabel">
+		        <input name="type" type="hidden" value="1" onchange="backfillChoose(this);">
+		        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		          None
+		          <span class="caret arrow-down"></span>
+		        </button>
+		        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		          <li data-value="1"><a href="javascript:;">None</a></li>
+		          <li data-value="2"><a href="javascript:;">Background Color</a></li>
+		          <li data-value="3"><a href="javascript:;">Image</a></li>
+		          <li data-value="4"><a href="javascript:;">Backfill Code</a></li>
+		          <li data-value="5"><a href="javascript:;">System Default</a></li>
+		        </ul>
+		      </div>
+		      <div class="clearfix infolabel hide"></div>
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		</div>
+		<div class="control-group hide" id="backfill_info">
+		    <label class="control-label"></label>
+		    <div class="controls">
+		      <div class="clearfix infolabel hide"></div>
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		</div>
+		<div class="control-group backfill hide" id="backfill_2">
+		    <label class="control-label">  Backfill Background<span class="glyphicon glyphicon-question-sign"
+		      aria-hidden="true" data-toggle="tooltip" data-placement="right" title="<s:message code='form.tip.backfill.color' />"></span>
+		    </label>
+		    <div class="controls">
+		      <div class="clearfix modifylabel">
+		        <input type="text" class="backfillcontent" name="backgoundColor" disabled id="backgoundColor" value="" />
+		        <div id="color-picker" class="cp-default hide"></div>
+		      </div>
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		</div>
+
+		  <div class="control-group backfill hide" id="backfill_3">
+		    <label class="control-label"> Backfill Image <s:message code="body.backfill.image" /> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"
+		      data-toggle="tooltip" data-placement="right" title="<s:message code='form.tip.backfill.image' />"></span> </label>
+		    <div class="controls">
+		      <div class="clearfix modifylabel">
+		        <input type="text" class="backfillcontent" name="realPath" disabled value="" />
+		      </div>
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		  </div>
+
+		  <div class="control-group backfill hide" id="backfill_4">
+		    <label class="control-label"> Backfill Code <span class="glyphicon glyphicon-question-sign"
+		      aria-hidden="true" data-toggle="tooltip" data-placement="right" title="<s:message code='form.tip.backfill.code' />"></span></label>
+		    <div class="controls">
+		      <div class="clearfix modifylabel">
+		        <textarea class="input-xlarge span4 backfillcontent" name="backfillCode" disabled style="width: 360px !important;" rows="5" cols="20"></textarea>
+		      </div>
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"></div>
+		      </div>
+		    </div>
+		</div>
+		<div class="control-group profitShareType">
+			<label class="control-label">Revenue Share <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the revenue share type and then enter a corresponding value. A fixed revenue share is a fixed CPM price that is given to the publisher. A percentage revenue share is a set percentage of the sell price that is given to the publisher."></span></label>
+			<div class="controls">
+			      <div class="dropdown modifylabel">
+				  <input name="revenueType" id="profitShareType" onchange="changeRevenueType(this.value)" type="hidden" value="" title="Default value: Fixed - 100.00CNY (Site: buzzads)">
+				  <button class="btn dropdown-toggle" type="button" id="profitShareTypeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Default value: Fixed - 100.00CNY (Site: buzzads)<span class="caret arrow-down"></span></button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			        <li data-value="" class="active"><a href="javascript:;" id="profitShareTypeLink">Default value: Fixed - 100.00CNY (Site: buzzads)</a></li>
+					
+			          <li data-value="FIXED" class=""><a href="javascript:;">Fixed</a></li>
+			        
+			          <li data-value="SHARE" class=""><a href="javascript:;">Percentage</a></li>
+			        
+				  </ul>
+				</div>
+				<div class="clearfix infolabel hide" id="profitShareTypeShow">Default value: Fixed - 100.00CNY (Site: buzzads)</div>
+
+			</div>
+		</div>
+		<div class="control-group profitShareValue" style="display: none;">
+			<label class="control-label"></label>
+			<div class="controls">
+				<div class="clearfix modifylabel">
+					
+						<div class="input-append">
+						<input type="text" id="revenueValue" name="revenueValue" value="" style="width: 289px;" class="align_right numeric error"> <span class="add-on" style="width:50px">CNY</span>
+		                </div>
+					
+					
+					
+				</div>
+				<div class="clearfix infolabel hide" style="width: 289px; float: left; text-align: right">
+					
+					
+				</div>
+		        <span class="add-on infolabel hide" style="width: 50px;margin-left: -1px;padding: 4px 10px;text-align: center;">
+		        	
+					
+		        </span>
+				<div class="error-message hide">
+		           	<span class="glyphicon glyphicon-alert"></span>
+		           	<div class="clearfix">
+		           	<label for="revenueValue" generated="true" class="error">Revenue share value is invalid.</label></div>
+		           </div>
+			</div>
+		</div>
+		<div class="control-group preload" id="preload" style="display: none;">
+		  <label class="control-label">Preload <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please check this box if this ad unit supports preloading of creatives. Note that if the creative being served is not preloaded already, you may lose impression opportunities."></span></label>
+		  <div class="controls">
+		      <div class="dropdown modifylabel">
+		        <input name="preload" value="true" type="checkbox">
+		      </div>
+		      <div class="clearfix infolabel hide" style="background: #fff; border: none; padding-left: 0;">
+				<input disabled="" type="checkbox">
+			  </div>
+		      <div class="error-message hide">
+		       <span class="glyphicon glyphicon-alert"></span>
+		       <div class="clearfix"></div>
+		      </div>
+		  </div>
+		</div>
+		<div class="control-group vr" id="vr" style="display: none;">
+		  <label class="control-label">VR <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please check this box if this ad unit supports VR creatives."></span></label>
+		  <div class="controls">
+		      <div class="dropdown modifylabel">
+		        <input name="vr" value="true" type="checkbox">
+		      </div>
+		      <div class="clearfix infolabel hide" style="background: #fff; border: none; padding-left: 0;">
+				<input disabled="" type="checkbox">
+			  </div>
+		      <div class="error-message hide">
+		       <span class="glyphicon glyphicon-alert"></span>
+		       <div class="clearfix"></div>
+		      </div>
+		  </div>
+		</div>
+		<div class="control-group">
+		    <label class="control-label">Status</label>
+		    <div class="controls">
+		      <div class="dropdown modifylabel">
+		        <input name="status" type="hidden" value="STOPPED" onchange="$(this).valid();" class="valid" title="Stopped">
+		        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Stopped<span class="caret arrow-down"></span></button>
+		        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		          <li data-value="LIVE"><a href="javascript:;">Live</a></li>
+		          <li data-value="STOPPED" class="active"><a href="javascript:;">Stopped</a></li>
+		          <li data-value="SUSPENDED"><a href="javascript:;">Suspended</a></li>
+		        </ul>
+		      </div>
+		      <div class="clearfix infolabel hide" id="statusLabel">
+		        body.status.
+		      </div>
+		      <div class="error-message hide">
+		        <span class="glyphicon glyphicon-alert"></span>
+		        <div class="clearfix"><label for="status" generated="true" class="error"></label></div>
+		      </div>
+		    </div>
+		</div>
+
+		<div class="control-group">
+          <button type="button" class="btn btn-success" onclick="$('form').submit();"> Save
+          </button>
+          <button type="button" class="btn btn-cancel" onclick="window.location='/admin/inventories/units' ">
+            Cancel
+          </button>
+      	</div>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	var c = ColorPicker(document.getElementById('color-picker'), function(
+        hex, hsv, rgb) {
+      $("#backgoundColor").val(hex.substr(1));
+    });
+    $("#backgoundColor").click(function() {
+      $("#color-picker").toggle();
+      if ($("#backgoundColor").val() != "") {
+        c.setHex("#" + $("#backgoundColor").val());
+      }
+    });
+	$("#supportedImprType").chosen();
+    $("#supportedContextMimes").chosen();
+    $("#supportedContextMimesVideo").chosen();
+    $("#supportedBannerType").chosen();
+    $("#supportedVideoProtocols").chosen();
+    $("#apiFrameworks").chosen();
+    $("#apiFrameworksVideo").chosen();
+    $("#apiFrameworksNative").chosen();
+    //验证
+    $("form").validate(
+    {
+      rules : {
+        "publisherName" : {
+          required : true
+        },
+        "unitName" : {
+          required : true
+        },
+        "siteId" : {
+          required : true
+        },
+        "appId" : {
+          required : true
+        },
+        "banner_setting_json":{
+          verifyBasicJson : true
+        },
+        "native_setting_json":{
+          verifyNativeJson : true
+        },
+        "allowedImpTypes" : {
+          required : true
+        },
+        "videoProtocolId" : {
+          required : true
+        },
+        "apiFrameworksVideo":{
+          required: true
+        },
+        "allowedContentMimeVideo" : {
+          required : true
+        },
+        "width_video" : {
+          required : true,
+          digits : true
+        },
+        "height_video" : {
+          required : true,
+          digits : true
+        },
+         "durationMin" : {
+          required : true,
+          digits : true
+        },
+        "startDelay" : {
+            required : true
+            // digits : true
+        },
+        "startDelayNumber" : {
+            required : true,
+            digits : true
+        },
+        "startPlacement":{
+        	required:true
+        },
+        "durationMax" : {
+          required : true,
+          digits : true,
+          duration : true
+        },
+        "positionId" : {
+          required : true
+        },
+        "backfillType" : {
+          required : true
+        },
+        "status" : {
+          required : true
+        },
+        "decimalPrice" : {
+          required : true,
+          limitDigit : true
+        },
+        "backgoundColor" : {
+          required : true
+        },
+        "realPath" : {
+          required : true
+        },
+        "backfillCode" : {
+          required : true
+        },
+        "revenueValue" : {
+          isprofitShareValue : true
+        },
+
+      },
+      errorPlacement : function(error, element) {
+        element.parents(".controls").find(".error-message")
+            .removeClass("hide");
+        error.appendTo(element.parents(".controls").find(
+            ".error-message").find(".clearfix"));
+      },
+      ignore : "disabled",
+      messages : {
+      	"publisherName" : {
+          required : "Please select a publisher."
+        },
+        "siteId" : {
+          required : "Please select a site."
+        },
+        "appId" : {
+          required : "App name can not be empty."
+        },
+        "unitName" : {
+          required : "Ad unit name can not be empty."
+        },
+        "allowedImpTypes" : {
+          required : "You must choose at least one impression type."
+        },
+        "apiFrameworksVideo":{
+          required : "You must choose at least one apiFrameworksVideo"
+        },
+        "allowedContentMimeVideo" : {
+          required : "You must choose at least one context mime."
+        },
+        "videoProtocolId" : {
+          required : "You must choose at least one supported video protocol."
+        },
+        "width_video" : {
+          required : "Ad unit width can not be empty.",
+          digits : "Please enter an integer."
+        },
+        "height_video" : {
+          required : "Ad unit height can not be empty.",
+          digits : "Please enter an integer."
+        },
+         "durationMin" : {
+          required : "Please enter a minimum ad duration.",
+          digits : "Please enter an integer."
+        },
+        "durationMax" : {
+          required : "Please enter a maximum ad duration.",
+          digits : "Please enter an integer."
+        },
+        "startDelay" : {
+          required : "Please enter Video Ad Start Delay"
+        },
+        "startDelayNumber" : {
+          required : "Please enter Start Delay Number",
+          digits : "Please enter an integer."
+        },
+        "startPlacement" : {
+          required : "Please select a start delay placement",
+        },
+        "positionId" : {
+          required : "Please select an ad unit position."
+        },
+        "backfillType" : {
+          required : "Please select a backfill type."
+        },
+        "status" : {
+          required : "Please select a status."
+        },
+        
+        "decimalPrice" : {
+          required : "Price floor can not be empty."
+        },
+        "backgoundColor" : {
+          required : "Backfill background can not be empty."
+        },
+        "realPath" : {
+          required : "Backfill image can not be empty."
+        },
+        "backfillCode" : {
+          required : "Backfill code can not be empty."
+        },
+      },
+      beforeSend : function() {
+        $('[type="button"]').attr("disabled", true);
+      },
+      success : function(label) {
+        var fors = $(label).attr("for");
+        if (fors == "width" || fors == "height") {
+          $("label.error").each(
+              function() {
+                if ($(this).html().length) {
+                  $(this).parents(".error-message").removeClass(
+                      "hide");
+                } else {
+                  $(this).parents(".error-message")
+                      .addClass("hide");
+                }
+              })
+          return false;
+        }
+        $(label).parents(".error-message").addClass("hide");
+      },
+      submitHandler : function(form) { //通过之后回调
+      	
+        form.submit();
+      },
+      invalidHandler : function(form, validator) { //不通过回调
+        $("label.error").each(
+            function() {
+              $(this).html().length
+                  && $(this).parents(".error-message").removeClass(
+                      "hide");
+            })
+        return false;
+      }
+
+    })
+    // publisher验证
+    jQuery.validator.addMethod("publisher", function(value, element) {
+      var length = value.replace(/\s/g, "").length;
+      var isExist = $(element).length > 0;
+      if (isExist) {
+        return length > 0;
+      } else {
+        return true;
+      }
+    }, "Please select a publisher.");
+
+    // 小数点精确两位验证
+    jQuery.validator.addMethod("limitDigit", function(value, element) {
+      var reg = /^([1-9]\d*|0)(\.\d{1,2})?$/;
+      var isLimit = reg.test(value);
+      return isLimit;
+    }, "Please enter an integer.");
+
+    jQuery.validator.addMethod("isprofitShareValue", function(value, element) {
+		 var profitShareType = $("#profitShareType").val();
+		 if (profitShareType == 'FIXED') {
+			 return (value != "" && value >= 0 && /^-?(0|[1-9]\d*)(\.\d{1,2})?$/.test(value));
+		 } else if (profitShareType == 'SHARE') {
+			 return (value != "" && value >= 0 && value < 100 && /^-?(0|[1-9]\d*)?$/.test(value));
+		 } else {
+			 element.value = "";
+			 return true;
+		 }
+   }, "Revenue share value is invalid.");
+    // duration验证
+    jQuery.validator.addMethod("duration", function(value, element) {
+      var durationMin = $("[name='durationMin']").val();
+      var durationMax = $("[name='durationMax']").val();
+
+      return parseInt(durationMin) <= parseInt(durationMax)
+
+    }, "form.error.duration.range");	
+    jQuery.validator.addMethod("verifyBasicJson",function(value,element){
+    	var isVerify = verifyBasicJson();
+    	return isVerify;
+    }, "basic value is invalid.");
+    jQuery.validator.addMethod("verifyNativeJson",function(value,element){
+    	var isVerify = verifyNativeJson();
+    	return isVerify;
+    }, "native value is invalid.");
+   
+    //settings显示隐藏相关
+    $("body").on("change", "#supportedImprType", function() {
+    	var value = $(this).val();
+    	$(".imprsettings").hide();
+    	$(".imprsettings").find("select").attr("disabled", true);
+    	$(".imprsettings").find("input").attr("disabled", true);
+    	if (value) {
+    		for ( var i in value) {
+              var v = value[i];
+              $("#"+v+"_settings").show();
+              $("#"+v+"_settings").find("select").attr("disabled", false);
+              $("#"+v+"_settings").find("select").valid();
+              $("#"+v+"_settings").find("input").attr("disabled", false);
+              $("#"+v+"_settings").find("input").valid();
+          	}
+    	};
+    	$(this).valid();
+    });
+    //radio 显示隐藏相关
+    $(document).on("click",".form-radio input",function(){
+        var target = $(this).attr("data-target");
+        var name = $(this).attr("name");
+        if (target) {
+        	$("."+name).hide();
+	        $("#"+target).show();
+        };
+    })
+    //basic setting 相关 将里面的数据全部转换成json，并方便进行验证存储
+    $(document).on("change","[name='allowedBannerAdTypes']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.allowedBannerAdTypes = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='apiFrameworks']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.apiFrameworks = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='allowedContentMime']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.allowedContentMime = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='unitSizeType']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.unitSizeType = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='width']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.width = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='height']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.height = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='formats_banner_json']",function(){
+    	var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+    	//根据index找到对应的进行修改
+    	var sonjson = eval("("+$(this).val()+")");
+    	var isNew = true;
+    	if (!json.formatBanners) {
+    		json.formatBanners = [];
+    		json.formatBanners.push(sonjson);
+    	}else{
+    		for(var i=0;i<json.formatBanners.length;i++){
+              if (sonjson.index == json.formatBanners[i].index) {
+                json.formatBanners[i] = sonjson;
+                isNew = false;
+              };
+            }
+            if (isNew) {
+              json.formatBanners.push(sonjson);
+            };
+    	}
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    //{"unitSizeType":"1","allowedBannerAdTypes":["1"],"apiFrameworks":["1"],"allowedContentMime":["1"],"width":"2","height":"3","formatBanners":[{"index":1,"formatsType":1,"width":"4","height":"5"}]}
+    function verifyBasicJson(){
+    	var $inputJson = $("#Banner_settings").find("[name='banner_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+    	var $errorMesage;
+    	$("#Banner_settings").find(".error-message").addClass("hide");
+    	$("#Banner_settings").find(".error-message").find("div").empty();
+    	var reg = /^([1-9]\d*|0)(\.\d{1,2})?$/;//width height验证
+    	var verify = true;
+    	//开始验证每个字段。。。
+    	if (!json.allowedBannerAdTypes || json.allowedBannerAdTypes.length==0) {
+    		$errorMesage = $("[name='allowedBannerAdTypes']").parents(".modifylabel").parent().find(".error-message");
+    		$errorMesage.removeClass("hide");
+    		$errorMesage.find("div").html('<label for="allowedBannerAdTypes" generated="true" class="error">Ad banner types can not be empty.</label>');
+    		verify = false;
+    	}
+    	if (!json.apiFrameworks || json.apiFrameworks.length==0) {
+    		$errorMesage = $("[name='apiFrameworks']").parents(".modifylabel").parent().find(".error-message");
+    		$errorMesage.removeClass("hide");
+    		$errorMesage.find("div").html('<label for="apiFrameworks" generated="true" class="error">apiFrameworks name can not be empty.</label>');
+    		verify = false;
+    	}
+    	if (!json.allowedContentMime || json.allowedContentMime.length==0) {
+    		$errorMesage = $("[name='allowedContentMime']").parents(".modifylabel").parent().find(".error-message");
+    		$errorMesage.removeClass("hide");
+    		$errorMesage.find("div").html('<label for="allowedContentMime" generated="true" class="error">allowedContentMime name can not be empty.</label>');
+    		verify = false;
+    	}
+    	if (json.unitSizeType==0) {
+    		$errorMesage = $("[name='width']").parents(".input-append").parent().find(".error-message");
+    		if (!json.width || !reg.test(json.width)) {
+    			$errorMesage.removeClass("hide");
+    			$errorMesage.find("div").append('<label generated="true" class="error">width can not valid.</label>');
+    			verify = false;
+    		};
+    		if (!json.height || !reg.test(json.height)) {
+    			$errorMesage.removeClass("hide");
+    			$errorMesage.find("div").append('<label generated="true" class="error">height can not valid.</label>');
+    			verify = false;
+    		};
+    	}else{
+    		if (!json.formatBanners || json.formatBanners.length==0) {
+    			$errorMesage = $("#Banner_settings").find(".formats-banner").eq(1).find(".error-message");
+    			$errorMesage.removeClass("hide");
+    			$errorMesage.find("div").html('<label for="formats" generated="true" class="error">width or height can not valid.</label>');
+    			verify = false;
+    		}else{
+    			for (var i = 0; i < json.formatBanners.length; i++) {
+    				var bannerJson = json.formatBanners[i];
+    				var $errorMesage = $("#Banner_settings").find(".formats-banner").eq(bannerJson.index).find(".error-message");
+    				if (!bannerJson.width || !reg.test(bannerJson.width)) {
+		    			$errorMesage.removeClass("hide");
+		    			$errorMesage.find("div").html('<label for="width_formats" generated="true" class="error">width can not valid.</label>');
+		    			verify = false;
+		    		};
+		    		if (!bannerJson.height || !reg.test(bannerJson.height)) {
+		    			$errorMesage.removeClass("hide");
+		    			$errorMesage.find("div").html('<label for="height_formats" generated="true" class="error">height can not valid.</label>');
+		    			verify = false;
+		    		};
+    			};
+    		}
+    	}
+    	return verify;
+    }
+    $(document).on("change","[name='banner_setting_json']",function(){
+    	verifyBasicJson();
+    })
+    //formats banner 相关
+    $(document).on("change","[name='formats-banner-type']",function(){
+    	var $inputJson = $(this).parents(".formats-banner").find("[name='formats_banner_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.formatsBannerType = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='width_formats']",function(){
+    	var $inputJson = $(this).parents(".formats-banner").find("[name='formats_banner_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.width = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='height_formats']",function(){
+    	var $inputJson = $(this).parents(".formats-banner").find("[name='formats_banner_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.height = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='formats-banner-type']",function(){
+    	var type = $(this).val();
+    	if (type==1) {
+    		$(this).parents(".formats-banner").find("[name='opt']").text("X")
+    	}else{
+    		$(this).parents(".formats-banner").find("[name='opt']").text(":")
+    	}
+    })
+    $(document).on("click",".formats-banner .formats-banner-minus",function(){
+      var $con = $(this).parents(".formats-banner-con");
+      var $bannerCon = $(this).parents(".formats-banner");
+      var index = $bannerCon.index();
+      //basic json 需要改变
+      var $settingJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+      var json =  eval("("+$settingJson.val()+")");
+      if (json.formatBanners && json.formatBanners.length>0) {
+      	for (var i = 0,flag=true; i < json.formatBanners.length; flag ? i++ : i) {
+      		if(json.formatBanners[i] && index == json.formatBanners[i].index){
+              json.formatBanners.splice(i,1);
+              flag = false;
+            }else{
+              flag = true;
+            }
+      	};
+      	 $settingJson.val(JSON.stringify(json)).change();
+      };
+      $bannerCon.remove();
+      resetBannerIndex($con);
+    })
+    function resetBannerIndex(_this){
+      $(_this).find(".formats-banner").each(function(i){
+        $(this).find(".formats-banner-index").text("#"+i);
+        if(i>0){
+	        var $input = $(this).find("[name='formats_banner_json']");
+	        var sonjson = eval("("+$input.val()+")");
+	        //修改了index
+	        var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
+    		var json = eval("("+$inputJson.val()+")");
+    		if (!json.formatBanners) {
+	    		json.formatBanners = [];
+	    		json.formatBanners.push(sonjson);
+	    	}else{
+	    		for(var j=0;j<json.formatBanners.length;j++){
+	              if (sonjson.index == json.formatBanners[j].index) {
+	              	sonjson.index = i;
+	                json.formatBanners[j] = sonjson;
+	              };
+	            }
+	    	}
+	        $inputJson.val(JSON.stringify(json)).change();
+	    }
+      })
+    }
+    $(document).on("click",".clonebanner",function(){
+      var $con = $(this).parent().parent();
+      var id = $con.find(".formats-banner").length;
+
+      var cloneHtml = $con.find(".formats-banner:first").clone(true);
+      cloneHtml.append('<input type="hidden" name="formats_banner_json" value="{index:'+id+',formatsType:1}" />');
+      cloneHtml.find(".formats-banner-index").text("#"+id);
+      $(this).parent().before('<div class="formats-banner">'+cloneHtml.html()+'</div>');
+    })
+    //Native settings 相关
+    $(document).on("change","[name='native_setting_json']",function(){
+    	verifyNativeJson();
+    })
+    $(document).on("change","[name='apiFrameworksNative']",function(){
+    	var $inputJson = $(this).parents("#Native_settings").find("[name='native_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.apiFrameworksNative = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='native_asset_json']",function(){
+    	var $inputJson = $(this).parents("#Native_settings").find("[name='native_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+    	//根据index找到对应的进行修改
+    	var sonjson = eval("("+$(this).val()+")");
+    	var isNew = true;
+    	if (!json.assets) {
+    		json.assets = [];
+    		json.assets.push(sonjson);
+    	}else{
+    		for(var i=0;i<json.assets.length;i++){
+              if (sonjson.index == json.assets[i].index) {
+                json.assets[i] = sonjson;
+                isNew = false;
+              };
+            }
+            if (isNew) {
+              json.assets.push(sonjson);
+            };
+    	}
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    //{"apiFrameworksNative":["2"],"assets":[{"index":1,"require":0,"maxLengthText_title":"12","assetType":"1"},{"index":2,"require":0,"assetType":"0","imageWidth":"123","imageHeight":"123","allowedContentMime":["2"],"imageType":"0"},{"index":3,"require":0,"assetType":"-1","videoProtocolId":["2"],"allowedContentMimeVideo":["5"],"durationMin":"2","durationMax":"3"},{"index":4,"require":0,"assetType":"-2","maxLengthText_native":"123","dataType":"1"}]}
+    function verifyNativeJson(){
+    	var $inputJson = $("#Native_settings").find("[name='native_setting_json']");
+    	var json = eval("("+$inputJson.val()+")");
+    	var $errorMesage;
+    	$("#Native_settings").find(".error-message").addClass("hide");
+    	$("#Native_settings").find(".error-message").find("div").empty();
+    	var reg = /^([1-9]\d*|0)(\.\d{1,2})?$/;//width height验证
+    	var verify = true;
+    	//开始验证每个字段。。。
+    	if (!json.apiFrameworksNative || json.apiFrameworksNative.length==0) {
+    		$errorMesage = $("[name='apiFrameworksNative']").parents(".modifylabel").parent().find(".error-message");
+    		$errorMesage.removeClass("hide");
+    		$errorMesage.find("div").html('<label for="apiFrameworksNative" generated="true" class="error">apiFrameworks name can not be empty.</label>');
+    		verify = false;
+    	}
+		if (!json.assets || json.assets.length==0) {
+			$errorMesage = $("#Native_settings").find(".native-assets").eq(1).find(".error-message").eq(1);
+			$errorMesage.removeClass("hide");
+			$errorMesage.find("div").html('<label generated="true" class="error">text can not valid.</label>');
+			verify = false;
+		}else{
+			for (var i = 0; i < json.assets.length; i++) {
+				var assetJson = json.assets[i];
+				var $con = $("#Native_settings").find(".native-assets").eq(assetJson.index);
+				if (assetJson.assetType!=0 && !assetJson.assetType) {
+					$errorMesage = $con.find("[name='assetType']").parent().parent().find(".error-message");
+		    		$errorMesage.removeClass("hide");
+		    		$errorMesage.find("div").html('<label generated="true" class="error">assetType12 can not be empty.</label>');
+		    		verify = false;
+				};
+				if (assetJson.assetType==0) {
+					if (!assetJson.maxLengthText_title) {
+						$errorMesage = $con.find("[name='maxLengthText_title']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">maxLengthText title can not be empty.</label>');
+			    		verify = false;
+					};
+				}else if(assetJson.assetType==1){
+					if (!assetJson.imageType) {
+						$errorMesage = $con.find("[name='imageType']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">imageType can not be empty.</label>');
+			    		verify = false;
+					};
+					if (!assetJson.imageWidth || !reg.test(assetJson.imageWidth)) {
+						$errorMesage = $con.find("[name='imageWidth']").parent().parent().find(".error-message");
+		    			$errorMesage.removeClass("hide");
+		    			$errorMesage.find("div").html('<label for="width_formats" generated="true" class="error">width can not valid.</label>');
+		    			verify = false;
+		    		};
+		    		if (!assetJson.imageHeight || !reg.test(assetJson.imageHeight)) {
+		    			$errorMesage = $con.find("[name='imageHeight']").parent().parent().find(".error-message");
+		    			$errorMesage.removeClass("hide");
+		    			$errorMesage.find("div").html('<label for="height_formats" generated="true" class="error">height can not valid.</label>');
+		    			verify = false;
+		    		};
+		    		if (!assetJson.allowedContentMime || assetJson.allowedContentMime.length==0) {
+						$errorMesage = $con.find("[name='allowedContentMime_native']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">allowedContentMime can not be empty.</label>');
+			    		verify = false;
+					};
+				}else if(assetJson.assetType==2){
+					if (!assetJson.videoProtocolId || assetJson.videoProtocolId.length==0) {
+						$errorMesage = $con.find("[name='videoProtocolId_native']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">videoProtocolId can not be empty.</label>');
+			    		verify = false;
+					};
+					if (!assetJson.durationMin || !reg.test(assetJson.durationMin)) {
+						$errorMesage = $con.find("[name='durationMin_native']").parent().parent().find(".error-message");
+		    			$errorMesage.removeClass("hide");
+		    			$errorMesage.find("div").html('<label for="width_formats" generated="true" class="error">durationMin can not valid.</label>');
+		    			verify = false;
+		    		};
+		    		if (!assetJson.durationMax || !reg.test(assetJson.durationMax)) {
+		    			$errorMesage = $con.find("[name='durationMax_native']").parent().parent().find(".error-message");
+		    			$errorMesage.removeClass("hide");
+		    			$errorMesage.find("div").html('<label for="height_formats" generated="true" class="error">durationMax can not valid.</label>');
+		    			verify = false;
+		    		};
+		    		if (!assetJson.allowedContentMimeVideo || assetJson.allowedContentMimeVideo.length==0) {
+						$errorMesage = $con.find("[name='allowedContentMimeVideo_native']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">allowedContentMime can not be empty.</label>');
+			    		verify = false;
+					};
+				}else if (assetJson.assetType==3) {
+					if (!assetJson.dataType) {
+						$errorMesage = $con.find("[name='DataType']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">DataType can not be empty.</label>');
+			    		verify = false;
+					};
+					if (!assetJson.maxLengthText_native) {
+						$errorMesage = $con.find("[name='maxLengthText_native']").parent().parent().find(".error-message");
+			    		$errorMesage.removeClass("hide");
+			    		$errorMesage.find("div").html('<label generated="true" class="error">maxLengthText title can not be empty.</label>');
+			    		verify = false;
+					};
+				}
+			};
+		}
+    	return verify;
+    }
+    //Native Assets 相关
+    $(document).on("change","[name='assetType']",function(){
+    	var type = $(this).attr("title");
+    	var $con = $(this).parents(".native-assets");
+    	if (type) {
+    		$con.find(".type_asset").hide();
+    		$con.find(".type_asset").find("input").attr("disabled",true);
+    		$con.find(".type_asset").find("select").attr("disabled",true);
+    		$con.find(".type_"+type).show();
+    		$con.find(".type_"+type).find("input").attr("disabled",false);
+    		$con.find(".type_"+type).find("select").attr("disabled",false);
+    		if($con.find(".type_"+type).find(".select").length>0){
+    			$con.find(".type_"+type).find(".select").chosen();
+    		}
+    	};
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.assetType = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='maxLengthText_title']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.maxLengthText_title = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='imageType']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.imageType = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='imageWidth']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.imageWidth = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='imageHeight']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.imageHeight = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='allowedContentMime_native']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.allowedContentMime = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='videoProtocolId_native']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.videoProtocolId = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='allowedContentMimeVideo_native']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.allowedContentMimeVideo = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='durationMin_native']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.durationMin = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='durationMax_native']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.durationMax = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='DataType']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.dataType = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change","[name='maxLengthText_native']",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.maxLengthText_native = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("change",".assetRequire",function(){
+    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
+    	var json = eval("("+$inputJson.val()+")");
+        json.require = $(this).val();
+        $inputJson.val(JSON.stringify(json)).change();
+    })
+    $(document).on("click",".native-assets-con .native-assets-minus",function(){
+      var $con = $(this).parents(".native-assets-con");
+      var $assetCon = $(this).parents(".native-assets");
+      var index = $assetCon.index();
+      //basic json 需要改变
+      var $settingJson = $(this).parents("#Native_settings").find("[name='native_setting_json']");
+      var json =  eval("("+$settingJson.val()+")");
+      if (json.assets && json.assets.length>0) {
+      	for (var i = 0,flag=true; i < json.assets.length; flag ? i++ : i) {
+      		if(json.assets[i] && index == json.assets[i].index){
+              json.assets.splice(i,1);
+              flag = false;
+            }else{
+              flag = true;
+            }
+      	};
+      	 $settingJson.val(JSON.stringify(json)).change();
+      };
+      $assetCon.remove();
+      resetAssetIndex($con);
+    })
+    function resetAssetIndex(_this){
+      $(_this).find(".native-assets").each(function(i){
+        $(this).find(".control-label").find("b").text("Native Assets "+i);
+        if(i>0){
+        	var $input = $(this).find("[name='native_asset_json']");
+	        var sonjson = eval("("+$input.val()+")");
+	        //修改了index
+	        var $inputJson = $(this).parents("#Native_settings").find("[name='native_setting_json']");
+    		var json = eval("("+$inputJson.val()+")");
+    		if (!json.assets) {
+	    		json.assets = [];
+	    		json.assets.push(sonjson);
+	    	}else{
+	    		for(var j=0;j<json.assets.length;j++){
+	              if (sonjson.index == json.assets[j].index) {
+	              	sonjson.index = i;
+	                json.assets[j] = sonjson;
+	              };
+	            }
+	    	}
+	        $inputJson.val(JSON.stringify(json)).change();
+        }
+      })
+    }
+    $(document).on("click",".cloneassets",function(){
+      var $con = $(this).parent().parent();
+      var id = $con.find(".native-assets").length;
+
+      var cloneHtml = $con.find(".native-assets:first").clone(true);
+      cloneHtml.append('<input type="hidden" name="native_asset_json" value="{index:'+id+',require:0,assetType:0}" />');
+      cloneHtml.find(".control-label").find("b").text("Native Assets "+id);
+      cloneHtml.find("[type=radio]").each(function(){
+      	$(this).attr("name",$(this).attr("name")+id);
+      })
+      $(this).parent().before('<div class="native-assets">'+cloneHtml.html()+'</div>');
+    })
+})
+function backfillChoose(thi) {
+    var value = $(thi).val();
+    $(".backfill").addClass("hide");
+    $(".backfill").find("input,textarea").each(function() {
+      $(this).attr("disabled", "disabled");
+    })
+    $("#backfill_" + value).removeClass("hide");
+    $("#backfill_" + value).find("input,textarea").attr("disabled", false);
+  }
+function changeRevenueType(type) {
+	if (type == 'FIXED') {
+		$("#revenueValue").val("");
+		$("#revenueValue").next().html("CNY");
+		$(".profitShareValue").show();
+	} else if (type == 'SHARE'){
+		$("#revenueValue").val("");
+		$("#revenueValue").next().html("%");
+		$(".profitShareValue").show();
+	} else {
+		$("#revenueValue").val("");
+		$("#revenueValue").next().html("CNY");
+		$(".profitShareValue").hide();
+	}
+}
+</script>
+</div>
+<!-- container end -->
+<div class="clear"></div>
+<div class="clearfooter"></div>
+<div class="myfooter">
+  <label class="x-footer"> Copyright © 2016-2017 <a style="color:#c0c3cc;text-decoration:underline;" href="http://www.i-click.com/" target="_blank">iClick Interactive Asia Limited</a>. All Rights Reserved.
+  </label>
+  <label class="x-footer">
+    iAX v1.7.1 (Suggested browsers: Internet Explorer 8.0+, Chrome 8.0+, Firefox 3.5+, Safari 1.0+, Opera V11+)
+  </label>
+  <label class="x-footer">
+    Current Time Zone: (GMT+8:00) China Standard Time - Asia/Shanghai
+  </label>
+</div>
+</body>
+</html>
