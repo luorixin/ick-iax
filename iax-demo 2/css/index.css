@@ -2218,8 +2218,6 @@ fieldset[disabled] .xmo-btn-cancel.active {
 .formats-banner{
   position: relative;
   display: flex;
-  width: 650px;
-  flex-wrap: wrap;
 }
 .formats-banner .formats-banner-index{
   margin-right: 5px;

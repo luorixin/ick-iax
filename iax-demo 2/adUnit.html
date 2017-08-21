@@ -484,11 +484,6 @@
 						        <span class="glyphicon glyphicon-alert"></span>
 						        <div class="clearfix"></div>
 						    </div>
-						    <div class="input-append minwidth_formats" style="margin-left: 125px;display:none;">
-						        <input type="text" value="" style="width: 75px;" class="align_right numeric valid modifylabel" name="minwidth_formats">
-						        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
-						        <span class="add-on"> Min.Width </span> 
-						    </div>
 						</div>
 					    <div class="formats-banner">
 					    	<input type="hidden" name="formats_banner_json" value="{index:1,formatsType:1}" />
@@ -518,11 +513,6 @@
 						    <div class="error-message hide" style="height: auto; min-height: 28px;left:550px;">
 						        <span class="glyphicon glyphicon-alert"></span>
 						        <div class="clearfix"></div>
-						    </div>
-						    <div class="input-append minwidth_formats" style="margin-left: 125px;display:none;">
-						        <input type="text" value="" style="width: 75px;" class="align_right numeric valid modifylabel" name="minwidth_formats">
-						        <div class="clearfix infolabel hide align_right" style="width: 100px; float: left;"></div>
-						        <span class="add-on"> Min.Width </span> 
 						    </div>
 						</div>
 						<div class="formats-banner-plus">
@@ -697,25 +687,6 @@
 				    </div>
 			  	</div>
 			</div>
-			<div class="control-group hide" id="roll_mid" style="padding: 0;">
-		      <div class="controls">
-		        <div class="clearfix">
-		          <div class="label-input">
-		            Start Delay
-		          </div>
-		        </div>
-		        <div class="input-append">
-		          <input type="text" value="" style="width: 318px;" class="align_right numeric valid modifylabel"
-		            name="startDelayNumber" id="startDelayNumber">
-		          <div class="clearfix infolabel hide align_right" style="width: 318px; float: left;"></div>
-		          <span class="add-on"> Sec </span>
-		        </div>
-		        <div class="error-message hide" style="top: 30px;">
-		          <span class="glyphicon glyphicon-alert"></span>
-		          <div class="clearfix"></div>
-		        </div>
-		      </div>
-		    </div>
 			<div class="control-group" style="padding-top: 0">
 			  	<div class="controls">
 				    <div class="clearfix">
@@ -844,9 +815,9 @@
 								      </div>
 								    </div>
 								    <div class="dropdown modifylabel">
-								        <input name="imageType" type="hidden" value="" class="error">
+								        <input name="imageType" type="hidden" value="0" class="error">
 								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								          Please select an option
+								          Icon
 								          <span class="caret arrow-down"></span>
 								        </button>
 								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -1048,9 +1019,9 @@
 								      </div>
 								    </div>
 								    <div class="clearfix">
-							            <label class="form-radio radio-inline"><input type="radio" value="0" name="assetRequire_clone" class="assetRequire" checked>
+							            <label class="form-radio radio-inline"><input type="radio" value="0" name="assetRequire_clone" checked>
 							            No</label>
-							            <label class="form-radio radio-inline"><input type="radio" value="1" name="assetRequire_clone" class="assetRequire" >
+							            <label class="form-radio radio-inline"><input type="radio" value="1" name="assetRequire_clone">
 							            Yes</label>
 							        </div>
 								    <div class="infolabel hide"></div>
@@ -1120,9 +1091,9 @@
 								      </div>
 								    </div>
 								    <div class="dropdown modifylabel">
-								        <input name="imageType" type="hidden" value="" class="">
+								        <input name="imageType" type="hidden" value="0" class="error">
 								        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								          Please select an option
+								          Icon
 								          <span class="caret arrow-down"></span>
 								        </button>
 								        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -1324,9 +1295,9 @@
 								      </div>
 								    </div>
 								    <div class="clearfix">
-							            <label class="form-radio radio-inline"><input type="radio" value="0" name="assetRequire" class="assetRequire" checked>
+							            <label class="form-radio radio-inline"><input type="radio" value="0" name="assetRequire" checked>
 							            No</label>
-							            <label class="form-radio radio-inline"><input type="radio" value="1" name="assetRequire" class="assetRequire" >
+							            <label class="form-radio radio-inline"><input type="radio" value="1" name="assetRequire">
 							            Yes</label>
 							        </div>
 								    <div class="infolabel hide"></div>
@@ -1463,7 +1434,7 @@
 		        <div class="clearfix"></div>
 		      </div>
 		    </div>
-		</div>
+		  </div>
 
 		  <div class="control-group backfill hide" id="backfill_3">
 		    <label class="control-label"> Backfill Image <s:message code="body.backfill.image" /> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"
@@ -1491,104 +1462,8 @@
 		        <div class="clearfix"></div>
 		      </div>
 		    </div>
-		</div>
-		<div class="control-group profitShareType">
-			<label class="control-label">Revenue Share <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please choose the revenue share type and then enter a corresponding value. A fixed revenue share is a fixed CPM price that is given to the publisher. A percentage revenue share is a set percentage of the sell price that is given to the publisher."></span></label>
-			<div class="controls">
-			      <div class="dropdown modifylabel">
-				  <input name="revenueType" id="profitShareType" onchange="changeRevenueType(this.value)" type="hidden" value="" title="Default value: Fixed - 100.00CNY (Site: buzzads)">
-				  <button class="btn dropdown-toggle" type="button" id="profitShareTypeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Default value: Fixed - 100.00CNY (Site: buzzads)<span class="caret arrow-down"></span></button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			        <li data-value="" class="active"><a href="javascript:;" id="profitShareTypeLink">Default value: Fixed - 100.00CNY (Site: buzzads)</a></li>
-					
-			          <li data-value="FIXED" class=""><a href="javascript:;">Fixed</a></li>
-			        
-			          <li data-value="SHARE" class=""><a href="javascript:;">Percentage</a></li>
-			        
-				  </ul>
-				</div>
-				<div class="clearfix infolabel hide" id="profitShareTypeShow">Default value: Fixed - 100.00CNY (Site: buzzads)</div>
+		  </div>
 
-			</div>
-		</div>
-		<div class="control-group profitShareValue" style="display: none;">
-			<label class="control-label"></label>
-			<div class="controls">
-				<div class="clearfix modifylabel">
-					
-						<div class="input-append">
-						<input type="text" id="revenueValue" name="revenueValue" value="" style="width: 289px;" class="align_right numeric error"> <span class="add-on" style="width:50px">CNY</span>
-		                </div>
-					
-					
-					
-				</div>
-				<div class="clearfix infolabel hide" style="width: 289px; float: left; text-align: right">
-					
-					
-				</div>
-		        <span class="add-on infolabel hide" style="width: 50px;margin-left: -1px;padding: 4px 10px;text-align: center;">
-		        	
-					
-		        </span>
-				<div class="error-message hide">
-		           	<span class="glyphicon glyphicon-alert"></span>
-		           	<div class="clearfix">
-		           	<label for="revenueValue" generated="true" class="error">Revenue share value is invalid.</label></div>
-		           </div>
-			</div>
-		</div>
-		<div class="control-group preload" id="preload" style="display: none;">
-		  <label class="control-label">Preload <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please check this box if this ad unit supports preloading of creatives. Note that if the creative being served is not preloaded already, you may lose impression opportunities."></span></label>
-		  <div class="controls">
-		      <div class="dropdown modifylabel">
-		        <input name="preload" value="true" type="checkbox">
-		      </div>
-		      <div class="clearfix infolabel hide" style="background: #fff; border: none; padding-left: 0;">
-				<input disabled="" type="checkbox">
-			  </div>
-		      <div class="error-message hide">
-		       <span class="glyphicon glyphicon-alert"></span>
-		       <div class="clearfix"></div>
-		      </div>
-		  </div>
-		</div>
-		<div class="control-group vr" id="vr" style="display: none;">
-		  <label class="control-label">VR <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Please check this box if this ad unit supports VR creatives."></span></label>
-		  <div class="controls">
-		      <div class="dropdown modifylabel">
-		        <input name="vr" value="true" type="checkbox">
-		      </div>
-		      <div class="clearfix infolabel hide" style="background: #fff; border: none; padding-left: 0;">
-				<input disabled="" type="checkbox">
-			  </div>
-		      <div class="error-message hide">
-		       <span class="glyphicon glyphicon-alert"></span>
-		       <div class="clearfix"></div>
-		      </div>
-		  </div>
-		</div>
-		<div class="control-group">
-		    <label class="control-label">Status</label>
-		    <div class="controls">
-		      <div class="dropdown modifylabel">
-		        <input name="status" type="hidden" value="STOPPED" onchange="$(this).valid();" class="valid" title="Stopped">
-		        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Stopped<span class="caret arrow-down"></span></button>
-		        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		          <li data-value="LIVE"><a href="javascript:;">Live</a></li>
-		          <li data-value="STOPPED" class="active"><a href="javascript:;">Stopped</a></li>
-		          <li data-value="SUSPENDED"><a href="javascript:;">Suspended</a></li>
-		        </ul>
-		      </div>
-		      <div class="clearfix infolabel hide" id="statusLabel">
-		        body.status.
-		      </div>
-		      <div class="error-message hide">
-		        <span class="glyphicon glyphicon-alert"></span>
-		        <div class="clearfix"><label for="status" generated="true" class="error"></label></div>
-		      </div>
-		    </div>
-		</div>
 
 		<div class="control-group">
           <button type="button" class="btn btn-success" onclick="$('form').submit();"> Save
@@ -1853,14 +1728,6 @@ $(function(){
 			 return true;
 		 }
    }, "Revenue share value is invalid.");
-    // duration验证
-    jQuery.validator.addMethod("duration", function(value, element) {
-      var durationMin = $("[name='durationMin']").val();
-      var durationMax = $("[name='durationMax']").val();
-
-      return parseInt(durationMin) <= parseInt(durationMax)
-
-    }, "form.error.duration.range");	
     jQuery.validator.addMethod("verifyBasicJson",function(value,element){
     	var isVerify = verifyBasicJson();
     	return isVerify;
@@ -2008,20 +1875,13 @@ $(function(){
     				var $errorMesage = $("#Banner_settings").find(".formats-banner").eq(bannerJson.index).find(".error-message");
     				if (!bannerJson.width || !reg.test(bannerJson.width)) {
 		    			$errorMesage.removeClass("hide");
-		    			$errorMesage.find("div").html('<label  generated="true" class="error">width can not valid.</label>');
+		    			$errorMesage.find("div").html('<label for="width_formats" generated="true" class="error">width can not valid.</label>');
 		    			verify = false;
 		    		};
 		    		if (!bannerJson.height || !reg.test(bannerJson.height)) {
 		    			$errorMesage.removeClass("hide");
-		    			$errorMesage.find("div").html('<label  generated="true" class="error">height can not valid.</label>');
+		    			$errorMesage.find("div").html('<label for="height_formats" generated="true" class="error">height can not valid.</label>');
 		    			verify = false;
-		    		};
-		    		if (bannerJson.formatsType==2) {
-		    			if (!bannerJson.minWidth || !reg.test(bannerJson.minWidth)) {
-			    			$errorMesage.removeClass("hide");
-			    			$errorMesage.find("div").html('<label generated="true" class="error">min width can not valid.</label>');
-			    			verify = false;
-			    		};
 		    		};
     			};
     		}
@@ -2035,13 +1895,8 @@ $(function(){
     $(document).on("change","[name='formats-banner-type']",function(){
     	var $inputJson = $(this).parents(".formats-banner").find("[name='formats_banner_json']");
     	var json = eval("("+$inputJson.val()+")");
-        json.formatsType = $(this).val();
+        json.formatsBannerType = $(this).val();
         $inputJson.val(JSON.stringify(json)).change();
-        if (json.formatsType==2) {
-        	$(this).parents(".formats-banner").find(".minwidth_formats").show();
-        }else{
-        	$(this).parents(".formats-banner").find(".minwidth_formats").hide();
-        }
     })
     $(document).on("change","[name='width_formats']",function(){
     	var $inputJson = $(this).parents(".formats-banner").find("[name='formats_banner_json']");
@@ -2055,13 +1910,6 @@ $(function(){
         json.height = $(this).val();
         $inputJson.val(JSON.stringify(json)).change();
     })
-    $(document).on("change","[name='minwidth_formats']",function(){
-    	var $inputJson = $(this).parents(".formats-banner").find("[name='formats_banner_json']");
-    	var json = eval("("+$inputJson.val()+")");
-        json.minWidth = $(this).val();
-        $inputJson.val(JSON.stringify(json)).change();
-    })
-    
     $(document).on("change","[name='formats-banner-type']",function(){
     	var type = $(this).val();
     	if (type==1) {
@@ -2094,26 +1942,6 @@ $(function(){
     function resetBannerIndex(_this){
       $(_this).find(".formats-banner").each(function(i){
         $(this).find(".formats-banner-index").text("#"+i);
-        if(i>0){
-	        var $input = $(this).find("[name='formats_banner_json']");
-	        var sonjson = eval("("+$input.val()+")");
-	        //修改了index
-	        var $inputJson = $(this).parents("#Banner_settings").find("[name='banner_setting_json']");
-    		var json = eval("("+$inputJson.val()+")");
-    		if (!json.formatBanners) {
-	    		json.formatBanners = [];
-	    		json.formatBanners.push(sonjson);
-	    	}else{
-	    		for(var j=0;j<json.formatBanners.length;j++){
-	              if (sonjson.index == json.formatBanners[j].index) {
-	              	sonjson.index = i;
-	                json.formatBanners[j] = sonjson;
-	              };
-	            }
-	    	}
-	    	$input.val(JSON.stringify(sonjson));
-	        $inputJson.val(JSON.stringify(json)).change();
-	    }
       })
     }
     $(document).on("click",".clonebanner",function(){
@@ -2124,7 +1952,6 @@ $(function(){
       cloneHtml.append('<input type="hidden" name="formats_banner_json" value="{index:'+id+',formatsType:1}" />');
       cloneHtml.find(".formats-banner-index").text("#"+id);
       $(this).parent().before('<div class="formats-banner">'+cloneHtml.html()+'</div>');
-      $(this).parent().parent().find("[name='formats_banner_json']").change();
     })
     //Native settings 相关
     $(document).on("change","[name='native_setting_json']",function(){
@@ -2212,7 +2039,7 @@ $(function(){
 		    		if (!assetJson.imageHeight || !reg.test(assetJson.imageHeight)) {
 		    			$errorMesage = $con.find("[name='imageHeight']").parent().parent().find(".error-message");
 		    			$errorMesage.removeClass("hide");
-		    			$errorMesage.find("div").html('<label generated="true" class="error">height can not valid.</label>');
+		    			$errorMesage.find("div").html('<label for="height_formats" generated="true" class="error">height can not valid.</label>');
 		    			verify = false;
 		    		};
 		    		if (!assetJson.allowedContentMime || assetJson.allowedContentMime.length==0) {
@@ -2237,7 +2064,7 @@ $(function(){
 		    		if (!assetJson.durationMax || !reg.test(assetJson.durationMax)) {
 		    			$errorMesage = $con.find("[name='durationMax_native']").parent().parent().find(".error-message");
 		    			$errorMesage.removeClass("hide");
-		    			$errorMesage.find("div").html('<label generated="true" class="error">durationMax can not valid.</label>');
+		    			$errorMesage.find("div").html('<label for="height_formats" generated="true" class="error">durationMax can not valid.</label>');
 		    			verify = false;
 		    		};
 		    		if (!assetJson.allowedContentMimeVideo || assetJson.allowedContentMimeVideo.length==0) {
@@ -2350,12 +2177,6 @@ $(function(){
         json.maxLengthText_native = $(this).val();
         $inputJson.val(JSON.stringify(json)).change();
     })
-    $(document).on("change",".assetRequire",function(){
-    	var $inputJson = $(this).parents(".native-assets").find("[name='native_asset_json']");
-    	var json = eval("("+$inputJson.val()+")");
-        json.require = $(this).val();
-        $inputJson.val(JSON.stringify(json)).change();
-    })
     $(document).on("click",".native-assets-con .native-assets-minus",function(){
       var $con = $(this).parents(".native-assets-con");
       var $assetCon = $(this).parents(".native-assets");
@@ -2380,26 +2201,6 @@ $(function(){
     function resetAssetIndex(_this){
       $(_this).find(".native-assets").each(function(i){
         $(this).find(".control-label").find("b").text("Native Assets "+i);
-        if(i>0){
-        	var $input = $(this).find("[name='native_asset_json']");
-	        var sonjson = eval("("+$input.val()+")");
-	        //修改了index
-	        var $inputJson = $(this).parents("#Native_settings").find("[name='native_setting_json']");
-    		var json = eval("("+$inputJson.val()+")");
-    		if (!json.assets) {
-	    		json.assets = [];
-	    		json.assets.push(sonjson);
-	    	}else{
-	    		for(var j=0;j<json.assets.length;j++){
-	              if (sonjson.index == json.assets[j].index) {
-	              	sonjson.index = i;
-	                json.assets[j] = sonjson;
-	              };
-	            }
-	    	}
-	    	$input.val(JSON.stringify(sonjson));
-	        $inputJson.val(JSON.stringify(json)).change();
-        }
       })
     }
     $(document).on("click",".cloneassets",function(){
@@ -2413,31 +2214,6 @@ $(function(){
       	$(this).attr("name",$(this).attr("name")+id);
       })
       $(this).parent().before('<div class="native-assets">'+cloneHtml.html()+'</div>');
-      $(this).parent().parent().find("[name='native_asset_json']").change();
-    })
-
-    $("#apiFrameworksVideo").change(function() {
-      $(this).valid();
-    })
-    $("#supportedContextMimesVideo").change(function() {
-      $(this).valid();
-    })
-    $("#supportedVideoProtocols").change(function() {
-      $(this).valid();
-    })
-    $("[name='width_video'],[name='height_video']").on("keyup", function() {
-      var _this = this;
-      $(_this).parent().next().addClass("hide");
-      var inputs = $(_this).parent().find("input").map(function() {
-        $(this).valid();
-        return $(this).val().replace(/\s/g, "");
-      }).get();
-      for (var i = 0; i < inputs.length; i++) {
-        if (!(/^[0-9]*$/g).test(inputs[i]) || inputs[i] == "") {
-          $(_this).parent().next().removeClass("hide");
-          break;
-        }
-      }
     })
 })
 function backfillChoose(thi) {
@@ -2449,40 +2225,6 @@ function backfillChoose(thi) {
     $("#backfill_" + value).removeClass("hide");
     $("#backfill_" + value).find("input,textarea").attr("disabled", false);
   }
-function changeContext(thi) {
-    var value = $(thi).val();
-    $(".name").addClass("hide");
-    $(".name").find("input:hidden").attr("disabled", true);
-    $("#name_" + value).removeClass("hide");
-    $("#name_" + value).show();
-    $("#name_" + value).find("input:hidden").attr("disabled", false);
-    $("#name_" + value).find("input:hidden").valid();
-  }
-function videoStartDelayChange(thi) {
-    var value = $(thi).val();
-    $("#roll_mid").addClass("hide");
-    $("#roll_mid").find("input").attr("disabled", true);
-    if (value == "1") {
-      $("#roll_mid").removeClass("hide");
-      $("#roll_mid").find("input").attr("disabled", false);
-      $("#roll_mid").find("input").valid();
-    }
-  }
-function changeRevenueType(type) {
-	if (type == 'FIXED') {
-		$("#revenueValue").val("");
-		$("#revenueValue").next().html("CNY");
-		$(".profitShareValue").show();
-	} else if (type == 'SHARE'){
-		$("#revenueValue").val("");
-		$("#revenueValue").next().html("%");
-		$(".profitShareValue").show();
-	} else {
-		$("#revenueValue").val("");
-		$("#revenueValue").next().html("CNY");
-		$(".profitShareValue").hide();
-	}
-}
 </script>
 </div>
 <!-- container end -->
